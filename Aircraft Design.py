@@ -5,7 +5,7 @@ from scipy.linalg import norm
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
 #Given Start
-Type="Turboprop"
+Type="Turboprop"                     #Turboprop/Turbojet
 passengers=60                        #Number Of Passengers
 pay_per_pass=100           #Kgf      #Payload per Passenger
 Pilots=2
