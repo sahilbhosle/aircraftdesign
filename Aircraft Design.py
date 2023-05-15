@@ -135,7 +135,7 @@ Cf=2.691
 CLmaxflap=2.7
 CLmaxnoflap=1.4
 deacc=-2.13                #m/s^2           #modern braking system and reverse thrust or reverse pitch propellers. 
-T=128500
+
 
 #Payload And Crew Weight Calculations
 Wpass=passengers*pay_per_pass                     #kgf    #Weight of Passengers
@@ -411,7 +411,7 @@ print(f'The Range of Wing Loading Based on Balanced Field Length : [{round(P_BFL
 print(f'Optimum Wing Loading : [{round(P_maxofminrange)},{round(P_minofmaxrange)}]\n')
 
 W_S=round(SLSP*1000/Wo/0.4158,2)
-print(f'Optimum Wing Loading : {W_S}')
+print(f'Optimum Wing Loading : {W_S} Kgf')
 S=round(Wo/W_S,2)
 print(f'S : {S}')
                                          ###Thrust Loading###
@@ -744,8 +744,11 @@ print(f"Takeoff Distance (Sto) : {Sto} m")
 
 ##Rate of Climb
 print("\nRate of Climb")
-RClimb=round((T-D)*Vs/3.6/Wo/9.81,2)
+T=0.2*Wo*9.81
+RClimb=round((2*T-D)*Vs/3.6/Wo/9.81,2)
 print(f"Rate of Climb (R/C) : {RClimb}m/s")
+Aclimb=round(np.arcsin(RClimb/Vs)*180/np.pi,2)
+print(f"Angle of Climb : {Aclimb} degree")
 
 ##Level Turn
 print("\nLevel Turn")
@@ -768,9 +771,6 @@ print(f"\nLanding Distance")
 Va=1.3*Vs/3.6
 S_landdist=round(-(Va**2)/2/deacc,2)                 
 print(f"Landing Distance : {S_landdist} m")
-
-
-
 
 
                                                         ####Figures###
@@ -973,12 +973,12 @@ plt.show()
 # CG Locations Plot
 x1 = [L_fus/2-1,L_fus/2-0.5]
 y1 = [0,0]
-plt.plot(CG_Airplane, 0, 'o-')
+plt.plot(CG_Airplane, 0, '*-')
 plt.plot(CG_Airplane_wofuel, 0, 'o-')
-plt.plot(CG_Airplane_wofuelpayload, 0, 'o-')
-plt.plot(CG_Airplane_wopayload, 0, 'o-')
+plt.plot(CG_Airplane_wofuelpayload, 0, 'x-')
+plt.plot(CG_Airplane_wopayload, 0, '*-')
 plt.plot(x1, y1, '-')
-#plt.legend(["CG_Airplane","CG_Airplane Without Fuel Full Payload", "CG_Airplane Without Fuel and Payload","CG_Airplane Without Payload Full Fuel"])  
+plt.legend(["CG_Airplane","CG_Airplane Without Fuel Full Payload", "CG_Airplane Without Fuel and Payload","CG_Airplane Without Payload Full Fuel"])  
 plt.xlabel("CG Locations")
 plt.title('Locations of CG')
 plt.show()
@@ -992,15 +992,15 @@ plt.xlabel("Coefficient of Drag (Cd)")
 plt.ylabel("Coefficient of Lift (Cl)")
 plt.show()
 
-y=[0,2,4,6,8,10,11,12]
-rhovar=[1.225,1.006,0.819,0.659,0.525,0.412,0.363,0.310]
-plt.plot(np.sqrt(2*W_S*9.18/rhovar/CLmaxflap)*3.6,y)
+y=[0,2,4,6]
+rhovar=[1.225,1.006,0.819,0.659]
+plt.plot(np.sqrt(2*W_S*9.18/rhovar/CLmaxflap)*3.6,y,"--")
 plt.plot(np.sqrt(2*W_S*9.18/rhovar/CLmaxnoflap)*3.6,y)
 plt.title('Stalling Speed VS Altitude')
 plt.xlabel("Stalling Speed (Vs) Kmph")
 plt.ylabel("Altitude (Km)")
-plt.legend(["Clmax=2.7 (with flap setting for landing)","Clmax=1.4 (no flaps)"])
-plt.xlim([0,600])
+plt.legend(["Clmax=2.7 (with flap setting for landing)","Clmax=1.4 (no flaps)","Maximum Speed"])
+plt.xlim([0,800])
 plt.show()
 
 x=np.linspace(0,RClimb)
@@ -1008,8 +1008,8 @@ y=-H_Cruise*1000/RClimb*x+H_Cruise*1000
 plt.plot(x,y,"-")
 plt.ylim([0,5000])
 plt.xlim([0,RClimb+1])
-plt.title("Rate of Climb vs Altitude")
-plt.xlabel("Rate of Climb (m/s)")
+plt.title("Maximum Rate of Climb vs Altitude")
+plt.xlabel("Maximum Rate of Climb (m/s)")
 plt.ylabel("Altitude (m)")
 plt.show()
 
@@ -1018,6 +1018,7 @@ x=np.linspace(Vs,250)
 plt.plot(np.arcsin(RClimb/x)*180/np.pi,y)
 plt.ylim([0,5])
 plt.title("Angle of Climb vs Altitude")
-plt.xlabel("Angle of Climb (deg)")
+plt.xlabel("Angle of Climb")
 plt.ylabel("Altitude (Km)")
 plt.show()
+
