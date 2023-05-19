@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tool For Aircraft Design</title>
+  </head>
+  <body>
+    <h1>Aircraft Design Tool</h1>
+    <form>
+      <label for="TurboProp">TurboProp:</label>
+        <input type="checkbox" id="checkbox1" name="checkbox1">
+        <label for="turboJet">TurboJET:</label>
+        <input type="checkbox" id="checkbox2" name="checkbox2">
+        <br>
+        <br>
+      <label for="name"> No. of Passengers </label> <input type="text" id="passengers" placeholder="60" value="60">
+      <br>
+      <label for="name"> Payload Per Passengers </label> <input type="text" id="pay_per_pass" placeholder="100" value="100"><label for="name"> Kg</label>
+      <br>
+      <label for="name"> No. of Crew </label> <input type="text" id="Crew" placeholder="4" value="4">
+      <br>
+      <label for="name"> Payload Per Crew </label> <input type="text" id="pay_per_crew" placeholder="85" value="85"> <label for="name"> Kg </label>
+      <br>
+      <label for="name"> Cruise Altitude </label> <input type="text" id="H_Cruise" placeholder="4.5" value="4.5"> <label for="name"> Km </label>
+      <br>
+      <label for="name"> Cruise Velocity </label> <input type="text" id="V_Cruise" placeholder="500" value="500"> <label for="name"> Km/hr </label>
+      <br>
+      <label for="name"> Speed of Sound at Cruise Altitude </label> <input type="text" id="a_cruise" placeholder="1160" value="1160"> <label for="name"> Km/hr </label>
+      <br>
+      <label for="name"> Density at Cruise Altitude </label> <input type="text" id="rho_Cruise" placeholder="0.7768" value="0.7768"> <label for="name"> Kg/m^3 </label>
+      <br>
+      <label for="name"> Safe Range </label> <input type="text" id="S_Range" placeholder="1300" value="1300"> <label for="name"> Km </label>
+      <br>
+      <label for="name"> Diversion Range </label> <input type="text" id="D_Range" placeholder="300" value="300"> <label for="name"> Km </label>
+      <br>
+      <label for="name"> Head Wind </label> <input type="text" id="HW" placeholder="15" value="15"> <label for="name"> m/s </label>
+      <br>
+      <label for="name"> Aspect Ratio </label> <input type="text" id="AR" placeholder="12" value="12"> <label for="name">  </label>
+      <br>
+      <label for="name"> Wing Area </label> <input type="text" id="S" placeholder="61.43" value="61.43"> <label for="name"> m^2 </label>
+      <br>
+      <label for="name"> Taper Ratio </label> <input type="text" id="TR" placeholder="0.5" value="0.5"> <label for="name"> </label>
+      <br>
+      <label for="name"> Bypass Ratio </label> <input type="text" id="BR" placeholder="6"  value="6"> <label for="name">  </label>
+      <br>
+      <label for="name"> Sweep c4 </label> <input type="text" id="sweep_c4" placeholder="22"  value="22"> <label for="name"> deg </label>
+      <br>
+      <label for="name"> Sweep c4 ETW</label> <input type="text" id="sweep_c4etw" placeholder="3.9"  value="3.9"> <label for="name"> deg </label>
+      <br>
+      <label for="name"> Twist </label> <input type="text" id="twist" placeholder="3"  value="3"> <label for="name"> deg </label>
+      <br>
+      <label for="name"> Dihedral </label> <input type="text" id="dihedral" placeholder="3"  value="3"> <label for="name"> deg </label>
+      <br>
+      <label for="name"> Sweep LEtw</label> <input type="text" id="sweep_LEtw" placeholder="6.07"  value="6.07"> <label for="name"> deg </label>
+      <br>
+      <label for="name"> Wing In Fuselage </label> <input type="text" id="winginfus" placeholder="0.35"  value="0.35"> <label for="name"> % </label>
+      <br>
+      <label for="name"> BSFC Cruise </label> <input type="text" id="BSFC_cruise" placeholder="2.7" value="2.7"> <label for="name"> N/KW/hr </label>
+      <br>
+      <label for="name"> Efficiency Cruise </label> <input type="text" id="eff_cruise" placeholder="0.85"  value="0.85"> <label for="name">  </label>
+      <br>
+      <label for="name"> BSFC Loiter </label> <input type="text" id="BSFC_loiter" placeholder="2.85" value="2.85"> <label for="name"> N/KW/hr </label>
+      <br>
+      <label for="name"> Efficiency Loiter </label> <input type="text" id="eff_loiter" placeholder="0.75"  value="0.75"> <label for="name">  </label>
+      <br>
+      <label for="name"> Assumed Weight </label> <input type="text" id="W0" placeholder="21500" value="21500"> <label for="name"> Kgf </label>
+      <br>
+      <label for="name"> W1/W0 </label> <input type="text" id="W1_W0" placeholder="0.98" value="0.98"> <label for="name"> </label>
+      <br>
+      <label for="name"> W2/W1 </label> <input type="text" id="W2_W1" placeholder="0.99"  value="0.99"> <label for="name">  </label>
+      <br>
+      <label for="name"> W5/W4 </label> <input type="text" id="W5_W4" placeholder="0.98" value="0.98"> <label for="name">  </label>
+      <br>
+      <label for="name"> Sea Level Static Power (SLSP) </label> <input type="text" id="SLSP" placeholder="3222" value="3222"> <label for="name"> KW </label>
+      <br>
+      <label for="name"> Landing Distance </label> <input type="text" id="S_land" placeholder="1200" value="1200"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Cl_max </label> <input type="text" id="Cl_max" placeholder="2.7" value="2.7"> <label for="name">  </label>
+      <br>
+      <label for="name"> Take-off Distance </label> <input type="text" id="BFL" placeholder="1400" value="1400"> <label for="name"> m </label>
+      <br>
+      <label for="name"> (T/W)to </label> <input type="text" id="T_W_TO" placeholder="0.3" value="0.3"> <label for="name">  </label>
+      <br>
+      <label for="name"> Engines </label> <input type="text" id="engines" placeholder="2" value="2"> <label for="name">  </label>
+      <br>
+      <label for="name"> Rate of Climb </label> <input type="text" id="R_C" placeholder="6.09" value="6.09"> <label for="name"> m/s </label>
+      <br>
+      <label for="name"> W/S </label> <input type="text" id="W_S" placeholder="3570" value="3570"> <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> t/c </label> <input type="text" id="t_c" placeholder="0.16" value="0.16"> <label for="name">  </label>
+      <br>
+      <label for="name"> Sht/S </label> <input type="text" id="Sht_S" placeholder="0.21" value="0.21"> <label for="name">  </label>
+      <br>
+      <label for="name"> Svt/S </label> <input type="text" id="Svt_S" placeholder="0.20" value="0.20"> <label for="name">  </label>
+      <br>
+      <label for="name"> Swet/S </label> <input type="text" id="Swet_S" placeholder="5" value="5"> <label for="name">  </label>
+      <br>
+      <label for="name"> Sigma </label> <input type="text" id="sigma" placeholder="1" value="1"> <label for="name">  </label>
+      <br>
+      <label for="name"> No. of Seats </label> <input type="text" id="N_seats" placeholder="4" value="4"> <label for="name">  </label>
+      <br>
+      <label for="name"> Width of Seat </label> <input type="text" id="W_seat" placeholder="0.44" value="0.44"> <label for="name"> m </label>
+      <br>
+      <label for="name"> No. of Elbow Rest </label> <input type="text" id="N_Elbow" placeholder="6" value="6"> <label for="name">  </label>
+      <br>
+      <label for="name"> Width of Elbow </label> <input type="text" id="W_Elbow" placeholder="0.05" value="0.05"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Dist. Seat Cabinwall </label> <input type="text" id="D_Seat_Cabinwall" placeholder="0.02" value="0.02"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Thickness of Cabin </label> <input type="text" id="T_Cabin" placeholder="0.1" value="0.1"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Number of Aisle </label> <input type="text" id="N_Aisle" placeholder="1" value="1"> <label for="name">  </label>
+      <br>
+      <label for="name"> Width of Aisle </label> <input type="text" id="W_Aisle" placeholder="0.46" value="0.46"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Fuselage Factor </label> <input type="text" id="fuse_fact" placeholder="0.12" value="0.12"> <label for="name">  </label>
+      <br>
+      <label for="name"> Length ofCockpit </label> <input type="text" id="L_Cockpit" placeholder="2.54" value="2.54"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Nose </label> <input type="text" id="L_Nose" placeholder="0.7" value="0.7"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Seat Rows </label> <input type="text" id="seat_rows" placeholder="13" value="13"> <label for="name">  </label>
+      <br>
+      <label for="name"> Seat Pitch </label> <input type="text" id="seat_pitch" placeholder="0.81" value="0.81"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Galley </label> <input type="text" id="L_galley" placeholder="0.6" value="0.6"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Door </label> <input type="text" id="L_door" placeholder="0.7" value="0.7"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Length Seat Galley </label> <input type="text" id="L_seat_galley" placeholder="1.0" value="1.0"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Taicone </label> <input type="text" id="L_tailcone" placeholder="9" value="9"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Dia. end_nose </label> <input type="text" id="D_end_nose" placeholder="1.64" value="1.64"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Rearcabin </label> <input type="text" id="L_rearcabin" placeholder="2.11" value="2.11"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Lac/Lfus </label> <input type="text" id="Lac_L_fus" placeholder="0.42" value="0.42"> <label for="name">  </label>
+      <br>
+      <label for="name"> Lht/Cw </label> <input type="text" id="Lht_Cw" placeholder="5.8" value="5.8"> <label for="name">  </label>
+      <br>
+      <label for="name"> Cht </label> <input type="text" id="Cht" placeholder="1.1" value="1.1"> <label for="name">  </label>
+      <br>
+      <label for="name"> Aspect Ratio of HT </label> <input type="text" id="ARht" placeholder="5" value="5"> <label for="name">  </label>
+      <br>
+      <label for="name"> Taper Ratio of HT </label> <input type="text" id="TRht" placeholder="0.5" value="0.5"> <label for="name">  </label>
+      <br>
+      <label for="name"> Se/Sht </label> <input type="text" id="Se_Sht" placeholder="0.35" value="0.35"> <label for="name">  </label>
+      <br>
+      <label for="name"> Sweep_LEht </label> <input type="text" id="Sweep_LEht" placeholder="11.24" value="11.24"> <label for="name"> deg </label>
+      <br>
+      <label for="name"> L_LEmac </label> <input type="text" id="L_LEmac" placeholder="0.237" value="0.237"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Lht-Lvt/b </label> <input type="text" id="Lht__Lvt_b" placeholder="0.05" value="0.05"> <label for="name">  </label>
+      <br>
+      <label for="name"> Cvt </label> <input type="text" id="Cvt" placeholder="0.1" value="0.1"> <label for="name">  </label>
+      <br>
+      <label for="name"> Aspect Ratio of VT </label> <input type="text" id="ARvt" placeholder="1.95" value="1.95"> <label for="name">  </label>
+      <br>
+      <label for="name"> Taper Ratio of VT </label> <input type="text" id="TRvt" placeholder="0.7" value="0.7"> <label for="name">  </label>
+      <br>
+      <label for="name"> Sr/Svt </label> <input type="text" id="Sr_Svt" placeholder="0.3" value="0.3"> <label for="name">  </label>
+      <br>
+      <label for="name"> Sweep_LEvt </label> <input type="text" id="Sweep_LEvt" placeholder="30" value="30"> <label for="name"> deg </label>
+      <br>
+      <label for="name"> Weight of Engine </label> <input type="text" id="W_Engine" placeholder="450" value="450"> <label for="name"> Kgf </label>
+      <br>
+      <label for="name"> Length of Engine </label> <input type="text" id="L_Engine" placeholder="2.13" value="2.13"> <label for="name"> m </label>
+      <br>
+      <label for="name"> boss_prop_LEwing </label> <input type="text" id="boss_prop_LEwing" placeholder="1.58" value="1.58"> <label for="name"> m </label>
+      <br>
+      <label for="name"> base_wheel </label> <input type="text" id="base_wheel" placeholder="9.78" value="9.78"> <label for="name"> m </label>
+      <br>
+      <label for="name"> Cons_Wing </label> <input type="text" id="Cons_Wing" placeholder="49" value="49"> <label for="name">  </label>
+      <br>
+      <label for="name"> cgwingpermac </label> <input type="text" id="cgwingpermac" placeholder="40" value="40"> <label for="name"> % </label>
+      <br>
+      <label for="name"> Cons_HT </label> <input type="text" id="Cons_HT" placeholder="27" value="27"> <label for="name">  </label>
+      <br>
+      <label for="name"> cghtpermac </label> <input type="text" id="cghtpermac" placeholder="40" value="40"> <label for="name"> % </label>
+      <br>
+      <label for="name"> Cons_VT </label> <input type="text" id="Cons_VT" placeholder="27" value="27"> <label for="name">  </label>
+      <br>
+      <label for="name"> cgvtpermac </label> <input type="text" id="cgvtpermac" placeholder="40" value="40"> <label for="name"> % </label>
+      <br>
+      <label for="name"> Cons_Eng </label> <input type="text" id="Cons_Eng" placeholder="1.3" value="1.3"> <label for="name">  </label>
+      <br>
+      <label for="name"> cgenginperlen </label> <input type="text" id="cgenginperlen" placeholder="40" value="40"> <label for="name"> % </label>
+      <br>
+      <label for="name"> Cons_Fus </label> <input type="text" id="Cons_Fus" placeholder="24" value="24"> <label for="name">  </label>
+      <br>
+      <label for="name"> cgfusperlen </label> <input type="text" id="cgfusperlen" placeholder="45" value="45"> <label for="name"> % </label>
+      <br>
+      <label for="name"> Wlg_Wo </label> <input type="text" id="Wlg_Wo" placeholder="4.3" value="4.3"> <label for="name"> % </label>
+      <br>
+      <label for="name"> CLmaxflap </label> <input type="text" id="CLmaxflap" placeholder="2.7" value="2.7"> <label for="name">  </label>
+      <br>
+      <label for="name"> CLmaxnoflap </label> <input type="text" id="CLmaxnoflap" placeholder="1.4" value="1.4"> <label for="name">  </label>
+      <br>
+      <label for="name"> de-acceleration </label> <input type="text" id="deacc" placeholder="-2.13" value="-2.13"> <label for="name"> m/S^2 </label>
+      <br>
+      <input type="button" value="Calculate" onclick="add()">
+      <br>
+      <br>
+      <label for="name"> Aircraft Weight Estimation </label>
+      <br>
+      <label for="name"> Weight of Passengers and Crew (Wpass_crew): </label>
+      <input type="text" id="Wpass_crew" placeholder="Wpass_crew">
+      <label for="name"> Kgf </label>
+      <br>
+      <label for="name"> Total Range (R): </label>
+      <input type="text" id="R" placeholder="R">
+      <label for="name"> Km </label>
+      <br>
+      <label for="name"> Mach No. at cruise (M): </label>
+      <input type="text" id="M_cruise" placeholder="M_cruise">
+      <br>
+      <label for="name">Cd = </label>
+      <input type="text" id="Cd0" placeholder="Cd0">
+      <label for="name"> + </label>
+      <input type="text" id="K" placeholder="K">
+      <label for="name"> Cl^2 </label>
+      <br>
+      <label for="name"> L/D_max: </label>
+      <input type="text" id="L_Dmax" placeholder="L_Dmax">
+      <br>
+      <label for="name"> L_Dcruise: </label>
+      <input type="text" id="L_Dcruise" placeholder="L_Dcruise">
+      <br>
+      <label for="name"> W3/W2: </label>
+      <input type="text" id="W3_W2" placeholder="W3_W2">
+      <br>
+      <label for="name"> W3_approx: </label>
+      <input type="text" id="W3_approx" placeholder="W3_approx">
+      <br>
+      <label for="name"> Clmin: </label>
+      <input type="text" id="Clmin" placeholder="Clmin">
+      <br>
+      <label for="name"> Vmin: </label>
+      <input type="text" id="Vmin" placeholder="Vmin">
+      <br>
+      <label for="name"> W4/W3: </label>
+      <input type="text" id="W4_W3" placeholder="W4_W3">
+      <br>
+      <label for="name"> W5/W0: </label>
+      <input type="text" id="W5_W0" placeholder="W5_W0">
+      <br>
+      <label for="name"> Wf/W0: </label>
+      <input type="text" id="Wf_W0" placeholder="Wf_W0">
+      <br>
+      <label for="name"> We/W0: </label>
+      <input type="text" id="We_W0" placeholder="We_W0">
+      <br>
+      <label for="name"> We: </label>
+      <input type="text" id="We" placeholder="We">
+      <label for="name"> Kgf </label>
+      <br>
+      <label for="name"> Wf: </label>
+      <input type="text" id="Wf" placeholder="Wf">
+      <label for="name"> Kgf </label>
+      <br>
+      <label for="name"> Wo: </label>
+      <input type="text" id="Wo" placeholder="Wo">
+      <label for="name"> Kgf </label>
+      <br>
+      <br>
+      <label for="name"> Wing Loading </label>
+      <br>
+      <label for="name"> Wing Loading based on Landing Distance </label>
+      <input type="text" id="P_land" placeholder="P_land">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> The Range of P_LD </label>
+      <input type="text" id="P_land_90_per" placeholder="P_land_90_per">
+      <input type="text" id="P_land_110_per" placeholder="P_land_110_per">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> Wing Loading Based on Prescribed Velocity </label>
+      <input type="text" id="pv" placeholder="pv">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> The Range of P_PV </label>
+      <input type="text" id="P_PV_min" placeholder="P_PV_min">
+      <input type="text" id="P_PV_max" placeholder="P_PV_max">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> Wing Loading Based on Absolute Ceiling </label>
+      <input type="text" id="P_AC1" placeholder="P_AC1">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> The Range of P_AC </label>
+      <input type="text" id="P_AC_min" placeholder="P_AC_min">
+      <input type="text" id="P_AC_max" placeholder="P_AC_max">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> Wing Loading Based on Rate Of Climb </label>
+      <input type="text" id="P_opt_R_C" placeholder="P_opt_R_C">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> The Range of P_R_C </label>
+      <input type="text" id="P_R_C_min" placeholder="P_R_C_min">
+      <input type="text" id="P_R_C_max" placeholder="P_R_C_max">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> Wing Loading Based on Range </label>
+      <input type="text" id="P_Range" placeholder="P_Range">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> The Range of P_Range </label>
+      <input type="text" id="P_Range_min" placeholder="P_Range_min">
+      <input type="text" id="P_Range_max" placeholder="P_Range_max">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> Wing Loading Based on Balanced Field Length </label>
+      <input type="text" id="P_BFL" placeholder="P_BFL">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> The Range of P_BFL </label>
+      <input type="text" id="P_BFL_min" placeholder="P_BFL_min">
+      <input type="text" id="P_BFL_max" placeholder="P_BFL_max">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <br>
+      <label for="name"> Optimum Wing Loading </label>
+      <input type="text" id="P_opt_min" placeholder="P_opt_min">
+      <input type="text" id="P_opt_max" placeholder="P_opt_max">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <br>
+      <label for="name"> Wing Sizing </label>
+      <br>
+      <label for="name"> Cl_Design: </label>
+      <input type="text" id="Cl_design" placeholder="Cl_design">
+      <br>
+      <label for="name"> W/S: </label>
+      <input type="text" id="W_Sopt" placeholder="W_Sopt">
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> Wing length (b): </label>
+      <input type="text" id="b" placeholder="b">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Wing Area (S): </label>
+      <input type="text" id="Snew" placeholder="S">
+      <label for="name"> m^2 </label>
+      <br>
+      <label for="name"> Root Chord (Cr): </label>
+      <input type="text" id="Cr" placeholder="Cr">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Tip Chord (Ct) </label>
+      <input type="text" id="Ct" placeholder="Ct">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Mean aerodynamic chord of the wing (Cw): </label>
+      <input type="text" id="Cw" placeholder="Cw">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The spanwise location of mac (ymac): </label>
+      <input type="text" id="ymac" placeholder="ymac">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The location of a.c. from the leading edge of the root chord is (L_ac_LErc): </label>
+      <input type="text" id="L_ac_LErc" placeholder="L_ac_LErc">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Equivalent Trapezoidal Wing </label>
+      <br>
+      <label for="name"> The root chord (Cre) of ETW: </label>
+      <input type="text" id="Cre" placeholder="Cre">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Taper ratio of (λe) of ETW (TRe): </label>
+      <input type="text" id="TRe" placeholder="TRe">
+      <br>
+      <label for="name"> The value of tan Λ_2 is (sweep_c2) : </label>
+      <input type="text" id="sweep_c2" placeholder="sweep_c2">
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Twist (ε): </label>
+      <input type="text" id="twistangle" placeholder="twistangle">
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Wing incidence (iw): </label>
+      <input type="text" id="iw" placeholder="iw">
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Dihedral angle (Γ): </label>
+      <input type="text" id="dihedralangle" placeholder="dihedralangle">
+      <label for="name"> deg </label>
+      <br>
+      <br>
+      <label for="name"> Fuselage Sizing </label>
+      <br>
+      <label for="name"> Cabin Width (W_cabin): </label>
+      <input type="text" id="W_cabin" placeholder="W_cabin">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Fuselage Width (W_fus): </label>
+      <input type="text" id="W_fus" placeholder="W_fus">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Fuselage Length (L_fus): </label>
+      <input type="text" id="L_fus" placeholder="L_fus">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Horizontal Tail Sizing </label>
+      <br>
+      <label for="name"> Distance between c.g. of airplane and A.C. of the horizontal tail (Lht): </label>
+      <input type="text" id="Lht" placeholder="Lht">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Distance of A.C. of H.Tail from nose of the fuselage (Lac_Htail): </label>
+      <input type="text" id="Lac_Htail" placeholder="Lac_Htail">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Area of H.Tail (Sht): </label>
+      <input type="text" id="Sht" placeholder="Sht">
+      <label for="name"> m^2 </label>
+      <br>
+      <label for="name"> Area of Elevator of H.Tail (Se): </label>
+      <input type="text" id="Se" placeholder="Se">
+      <label for="name"> m^2 </label>
+      <br>
+      <label for="name"> Span of H.Tail (bht): </label>
+      <input type="text" id="bht" placeholder="bht">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Rootchord of H.Tail (Crht): </label>
+      <input type="text" id="Crht" placeholder="Crht">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Tipchord of H.Tail (Ctht): </label>
+      <input type="text" id="Ctht" placeholder="Ctht">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Mean aerodynamic chord for H.Tail (C_ht): </label>
+      <input type="text" id="C_ht" placeholder="C_ht">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The location of the m.a.c. of the H.Tail (ymac_ht): </label>
+      <input type="text" id="ymac_ht" placeholder="ymac_ht">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The location of the a.c. of H.Tail from the leading edge of its root chord: </label>
+      <input type="text" id="L_acht_LErc" placeholder="L_acht_LErc">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Vertical Tail Sizing </label>
+      <br>
+      <label for="name"> Distance between c.g. of airplane and A.C. of the vertical tail (Lvt): </label>
+      <input type="text" id="Lvt" placeholder="Lvt">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Distance of A.C. of H.Tail from nose of the fuselage (Lac_Vtail): </label>
+      <input type="text" id="Lac_Vtail" placeholder="Lac_Vtail">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Area of V.Tail (Svt): </label>
+      <input type="text" id="Svt" placeholder="Svt">
+      <label for="name"> m^2 </label>
+      <br>
+      <label for="name"> Area of Rudder of V.Tail (Sr): </label>
+      <input type="text" id="Sr" placeholder="Sr">
+      <label for="name"> m^2 </label>
+      <br>
+      <label for="name"> Height of H.Tail (Hvt): </label>
+      <input type="text" id="Hvt" placeholder="Hvt">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Rootchord of V.Tail (Crvt): </label>
+      <input type="text" id="Crvt" placeholder="Crvt">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Tipchord of V.Tail (Ctvt): </label>
+      <input type="text" id="Ctvt" placeholder="Ctvt">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Mean aerodynamic chord for V.Tail (C_vt): </label>
+      <input type="text" id="C_vt" placeholder="C_vt">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The location of the m.a.c. of the V.Tail (ymac_vt): </label>
+      <input type="text" id="ymac_vt" placeholder="ymac_vt">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The location of the a.c. of V.Tail from the leading edge of its root chord: </label>
+      <input type="text" id="L_acvt_LErc" placeholder="L_acvt_LErc">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Centre of Gravity: </label>
+      <br>
+      <label for="name"> Wing </label>
+      <br>
+      <label for="name"> Area of Wing Exposed (S_exposed): </label>
+      <input type="text" id="S_exposed" placeholder="S_exposed">
+      <label for="name"> m^2 </label>
+      <br>
+      <label for="name"> The estimated weight of the wing (Wwing): </label>
+      <input type="text" id="Wwing" placeholder="Wwing">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> Wwing/Wo: </label>
+      <input type="text" id="Wwing_Wo" placeholder="Wwing_Wo">
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> The location of the c.g. of wing from the leading edge of the root chord of the wing (CG_wing_LErc): </label>
+      <input type="text" id="CG_wing_LErc" placeholder="CG_wing_LErc">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Horizontal Tail </label>
+      <br>
+      <label for="name"> The weight of H.Tail (Wht): </label>
+      <input type="text" id="Wht" placeholder="Wht">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> Wht/Wo: </label>
+      <input type="text" id="Wht_Wo" placeholder="Wht_Wo">
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> The distance between the leading edge of the root chord of h.tail and the c.g. of H.Tail (CG_ht_LErc): </label>
+      <input type="text" id="CG_ht_LErc" placeholder="CG_ht_LErc">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Vertical Tail </label>
+      <br>
+      <label for="name"> The weight of V.Tail (Wvt): </label>
+      <input type="text" id="Wvt" placeholder="Wvt">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> Wvt/Wo: </label>
+      <input type="text" id="Wvt_Wo" placeholder="Wvt_Wo">
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> The distance between the leading edge of the root chord of v.tail and the c.g. of V.Tail (CG_vt_LErc): </label>
+      <input type="text" id="CG_vt_LErc" placeholder="CG_vt_LErc">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Engine </label>
+      <br>
+      <label for="name"> The weight of Engine (Wengine): </label>
+      <input type="text" id="Wengine" placeholder="Wengine">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> Wengine/Wo: </label>
+      <input type="text" id="Wengine_Wo" placeholder="Wengine_Wo">
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> The location of engine c.g. from the leading edge of the wing (CG_eng_LE): </label>
+      <input type="text" id="CG_eng_LE" placeholder="CG_eng_LE">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Landing Gear </label>
+      <br>
+      <label for="name"> The weight of the nose wheel plus the main landing gear (Wlg): </label>
+      <input type="text" id="Wlg" placeholder="Wlg">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> The weight of the nose wheel landing gear (Wnwlg): </label>
+      <input type="text" id="Wnwlg" placeholder="Wnwlg">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> The weight of the main wheel landing gear (Wmwlg): </label>
+      <input type="text" id="Wmwlg" placeholder="Wmwlg">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> The c.g. of the nose wheel (CG_nwLG): </label>
+      <input type="text" id="CG_nwLG" placeholder="CG_nwLG">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The c.g. of the main wheels (CG_mwLG): </label>
+      <input type="text" id="CG_mwLG" placeholder="CG_mwLG">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Fuselage </label>
+      <br>
+      <label for="name"> The wetted area of fuselage (S_wet_fus): </label>
+      <input type="text" id="S_wet_fus" placeholder="S_wet_fus">
+      <label for="name"> m^2 </label>
+      <br>
+      <label for="name"> The weight of fuselage (Wfus): </label>
+      <input type="text" id="Wfus" placeholder="Wfus">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> Wfus/Wo: </label>
+      <input type="text" id="Wfus_Wo" placeholder="Wfus_Wo">
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> The c.g. of the fuselage and systems (CG_fus): </label>
+      <input type="text" id="CG_fus" placeholder="CG_fus">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The weight of fuselage+systems (Wfus_sys): </label>
+      <input type="text" id="Wfus_sys" placeholder="Wfus_sys">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Fuel </label>
+      <br>
+      <label for="name"> The weight of fuel (Wfuel): </label>
+      <input type="text" id="Wfuel" placeholder="Wfuel">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> Wfuel/Wo: </label>
+      <input type="text" id="Wfuel_Wo" placeholder="Wfuel_Wo">
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> The location of the c.g. of fuel from the leading edge of the root chord of the wing (CG_fuel_LErc): </label>
+      <input type="text" id="CG_fuel_LErc" placeholder="CG_fuel_LErc">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Payload and Crew </label>
+      <br>
+      <label for="name"> The weight of the crew and passangers plus the baggage (Wpay): </label>
+      <input type="text" id="Wpay" placeholder="Wpay">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> Wpay/Wo: </label>
+      <input type="text" id="Wpay_Wo" placeholder="Wpay_Wo">
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> The location of c.g. of payload and crew (CG_pay): </label>
+      <input type="text" id="CG_pay" placeholder="CG_pay">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Centre of Gravity Variation </label>
+      <br>
+      <label for="name"> The c.g. of the airplane is (CG_Airplane): </label>
+      <input type="text" id="CG_Airplane" placeholder="CG_Airplane">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The c.g. of the airplane Full payload, but no fuel is (CG_Airplane_wofuel): </label>
+      <input type="text" id="CG_Airplane_wofuel" placeholder="CG_Airplane_wofuel">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The c.g. of the airplane No payload and no fuel is (CG_Airplane_wofuelpayload): </label>
+      <input type="text" id="CG_Airplane_wofuelpayload" placeholder="CG_Airplane_wofuelpayload">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> The c.g. of the airplane No payload but full fuel is (CG_Airplane_wopayload): </label>
+      <input type="text" id="CG_Airplane_wopayload" placeholder="CG_Airplane_wopayload">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Flight Mechanics </label>
+      <br>
+      <label for="name"> Stalling Speed (Vs): </label>
+      <input type="text" id="Vs" placeholder="Vs">
+      <label for="name"> m/s^2 </label>
+      <br>
+      <label for="name"> Coefficient of Lift (Cl): </label>
+      <input type="text" id="C_l" placeholder="C_l">
+      <br>
+      <label for="name"> Coefficient of Drag (Cd): </label>
+      <input type="text" id="Cd" placeholder="Cd">
+      <br>
+      <label for="name"> L/D: </label>
+      <input type="text" id="L_D" placeholder="L_D">
+      <br>
+      <label for="name"> Lift: </label>
+      <input type="text" id="Lift" placeholder="Lift">
+      <label for="name"> N </label>
+      <br>
+      <label for="name"> Drag: </label>
+      <input type="text" id="Drag" placeholder="Drag">
+      <label for="name"> N </label>
+      <br>
+      <br>
+      <label for="name"> Takeoff Parameter </label>
+      <br>
+      <label for="name"> Decision Speed (V1): </label>
+      <input type="text" id="V1" placeholder="V1">
+      <label for="name"> Kmph </label>
+      <br>
+      <label for="name"> Rotation Speed (V2): </label>
+      <input type="text" id="V2" placeholder="V2">
+      <label for="name"> Kmph </label>
+      <br>
+      <label for="name"> Takeoff Distance (Sto): </label>
+      <input type="text" id="Sto" placeholder="Sto">
+      <label for="name"> m </label>
+      <br>
+      <br>
+      <label for="name"> Rate of Climb </label>
+      <br>
+      <label for="name"> Rate of Climb (R/C): </label>
+      <input type="text" id="RClimb" placeholder="RClimb">
+      <label for="name"> m/s </label>
+      <br>
+      <label for="name"> Angle of Climb (AClimb): </label>
+      <input type="text" id="AClimb" placeholder="AClimb">
+      <label for="name"> deg </label>
+      <br>
+      <br>
+      <label for="name"> Level Turn </label>
+      <br>
+      <label for="name"> Loading Factor (n): </label>
+      <input type="text" id="n" placeholder="n">
+      <br>
+      <label for="name"> Turn Radius (Rt): </label>
+      <input type="text" id="Rt" placeholder="Rt">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> omega: </label>
+      <input type="text" id="omega" placeholder="omega">
+      <label for="name"> rad/s </label>
+      <br>
+      <br>
+      <label for="name"> Gliding </label>
+      <br>
+      <label for="name"> phi: </label>
+      <input type="text" id="phi" placeholder="phi">
+      <label for="name"> deg </label>
+      <br>
+      <br>
+      <label for="name"> Landing Distance </label>
+      <br>
+      <label for="name"> Landing Distance: </label>
+      <input type="text" id="S_landdist" placeholder="S_landdist">
+      <label for="name"> m </label>
+      <br>
+    </form>
+    
+    <script>
+      function add() 
+      {
+        const rho_0=1.225;
+        const E=0.5;
+        const a_0=340;
+        //Input parameters fetch from User
+        var passengers = parseFloat(document.getElementById("passengers").value);
+        var pay_per_pass = parseFloat(document.getElementById("pay_per_pass").value);
+        var Crew = parseFloat(document.getElementById("Crew").value);
+        var pay_per_crew = parseFloat(document.getElementById("pay_per_crew").value);
+        var H_Cruise= parseFloat(document.getElementById("H_Cruise").value);
+        var V_Cruise= parseFloat(document.getElementById("V_Cruise").value);
+        var rho_Cruise= parseFloat(document.getElementById("rho_Cruise").value);
+        var a_cruise= parseFloat(document.getElementById("a_cruise").value);
+        var S_Range = parseFloat(document.getElementById("S_Range").value);
+        var D_Range = parseFloat(document.getElementById("D_Range").value); 
+        var HW = parseFloat(document.getElementById("HW").value);    
+        var AR = parseFloat(document.getElementById("AR").value);    
+        var S = parseFloat(document.getElementById("S").value);    
+        var TR = parseFloat(document.getElementById("TR").value);    
+        var sweep_c4 = parseFloat(document.getElementById("sweep_c4").value);    
+        var sweep_c4etw = parseFloat(document.getElementById("sweep_c4etw").value);    
+        var twist = parseFloat(document.getElementById("twist").value);    
+        var dihedral = parseFloat(document.getElementById("dihedral").value);    
+        var sweep_LEtw = parseFloat(document.getElementById("sweep_LEtw").value);    
+        var winginfus = parseFloat(document.getElementById("winginfus").value);    
+        var BR = parseFloat(document.getElementById("BR").value);    
+        var W0 = parseFloat(document.getElementById("W0").value);    
+        var W1_W0 = parseFloat(document.getElementById("W1_W0").value);    
+        var W2_W1 = parseFloat(document.getElementById("W2_W1").value);    
+        var W5_W4 = parseFloat(document.getElementById("W5_W4").value);    
+        var SLSP = parseFloat(document.getElementById("SLSP").value);    
+        var S_land = parseFloat(document.getElementById("S_land").value);    
+        var Cl_max = parseFloat(document.getElementById("Cl_max").value);    
+        var BFL = parseFloat(document.getElementById("BFL").value);    
+        var T_W_TO = parseFloat(document.getElementById("T_W_TO").value);    
+        var engines = parseFloat(document.getElementById("engines").value);    
+        var R_C = parseFloat(document.getElementById("R_C").value);    
+        var W_S = parseFloat(document.getElementById("W_S").value);    
+        var t_c = parseFloat(document.getElementById("t_c").value);    
+        var Sht_S = parseFloat(document.getElementById("Sht_S").value);    
+        var Svt_S = parseFloat(document.getElementById("Svt_S").value);    
+        var Swet_S = parseFloat(document.getElementById("Swet_S").value);    
+        var sigma = parseFloat(document.getElementById("sigma").value);    
+        var BSFC_cruise = parseFloat(document.getElementById("BSFC_cruise").value);    
+        var BSFC_loiter = parseFloat(document.getElementById("BSFC_loiter").value);    
+        var eff_cruise = parseFloat(document.getElementById("eff_cruise").value);    
+        var eff_loiter = parseFloat(document.getElementById("eff_loiter").value);      
+        var N_seats = parseFloat(document.getElementById("N_seats").value);
+        var W_seat = parseFloat(document.getElementById("W_seat").value);
+        var N_Aisle = parseFloat(document.getElementById("N_Aisle").value);
+        var W_Aisle = parseFloat(document.getElementById("W_Aisle").value);
+        var N_Elbow = parseFloat(document.getElementById("N_Elbow").value);
+        var W_Elbow = parseFloat(document.getElementById("W_Elbow").value);
+        var D_Seat_Cabinwall = parseFloat(document.getElementById("D_Seat_Cabinwall").value);
+        var fuse_fact = parseFloat(document.getElementById("fuse_fact").value);
+        var T_Cabin = parseFloat(document.getElementById("T_Cabin").value);
+        var seat_rows = parseFloat(document.getElementById("seat_rows").value);
+        var seat_pitch = parseFloat(document.getElementById("seat_pitch").value);
+        var L_galley = parseFloat(document.getElementById("L_galley").value);
+        var L_door = parseFloat(document.getElementById("L_door").value);
+        var L_seat_galley = parseFloat(document.getElementById("L_seat_galley").value);
+        var L_Nose = parseFloat(document.getElementById("L_Nose").value);
+        var L_Cockpit = parseFloat(document.getElementById("L_Cockpit").value);
+        var L_tailcone = parseFloat(document.getElementById("L_tailcone").value);
+        var D_end_nose = parseFloat(document.getElementById("D_end_nose").value);
+        var L_rearcabin = parseFloat(document.getElementById("L_rearcabin").value);
+        var Lac_L_fus = parseFloat(document.getElementById("Lac_L_fus").value);
+        var Lht_Cw = parseFloat(document.getElementById("Lht_Cw").value);
+        var Cht = parseFloat(document.getElementById("Cht").value);
+        var ARht = parseFloat(document.getElementById("ARht").value);
+        var TRht = parseFloat(document.getElementById("TRht").value);
+        var Se_Sht = parseFloat(document.getElementById("Se_Sht").value);
+        var Sweep_LEht = parseFloat(document.getElementById("Sweep_LEht").value);
+        var Sweep_LEvt = parseFloat(document.getElementById("Sweep_LEvt").value);
+        var L_LEmac = parseFloat(document.getElementById("L_LEmac").value);
+        var Cvt = parseFloat(document.getElementById("Cvt").value);
+        var Lht__Lvt_b = parseFloat(document.getElementById("Lht__Lvt_b").value);
+        var ARvt = parseFloat(document.getElementById("ARvt").value);
+        var TRvt = parseFloat(document.getElementById("TRvt").value);
+        var Sr_Svt = parseFloat(document.getElementById("Sr_Svt").value);
+        var W_Engine = parseFloat(document.getElementById("W_Engine").value);
+        var L_Engine = parseFloat(document.getElementById("L_Engine").value);
+        var boss_prop_LEwing = parseFloat(document.getElementById("boss_prop_LEwing").value);
+        var base_wheel = parseFloat(document.getElementById("base_wheel").value);
+        var Cons_Wing = parseFloat(document.getElementById("Cons_Wing").value);
+        var Cons_HT = parseFloat(document.getElementById("Cons_HT").value);
+        var Cons_VT = parseFloat(document.getElementById("Cons_VT").value);
+        var Cons_Fus = parseFloat(document.getElementById("Cons_Fus").value);
+        var Cons_Eng = parseFloat(document.getElementById("Cons_Eng").value);
+        var cgwingpermac = parseFloat(document.getElementById("cgwingpermac").value);
+        var cghtpermac = parseFloat(document.getElementById("cghtpermac").value);
+        var cgvtpermac = parseFloat(document.getElementById("cgvtpermac").value);
+        var cgenginperlen = parseFloat(document.getElementById("cgenginperlen").value);
+        var cgfusperlen = parseFloat(document.getElementById("cgfusperlen").value);
+        var Wlg_Wo = parseFloat(document.getElementById("Wlg_Wo").value);
+        var CLmaxflap = parseFloat(document.getElementById("CLmaxflap").value);
+        var CLmaxnoflap = parseFloat(document.getElementById("CLmaxnoflap").value);
+        var deacc = parseFloat(document.getElementById("deacc").value);
+       
+        // Calculation Formulae
+        //Aircraft Weight Estimation
+        var Wpass=passengers*pay_per_pass
+        var Wpass_crew = passengers*pay_per_pass+Crew*pay_per_crew;
+        var R = S_Range+D_Range+S_Range/V_Cruise*HW*3.6;
+        var M_cruise = V_Cruise/a_cruise;
+        if (checkbox1.checked) 
+          {
+          alert("Calculating For TurboProp");
+            var Cd0 = 0.03354*S**(-0.1);
+            var K = (1.356)/(3.14*AR);
+            var A=0.92;
+            var c=-0.05;
+            var L_Dmax = 1/(2*(Cd0*K)**0.5);
+            var L_Dcruise = 0.866*L_Dmax;
+            var W3_W2 = Math.exp(-R*BSFC_cruise/3600/eff_cruise/L_Dmax);
+            var W3_approx = (W1_W0 * W2_W1 *W3_W2) * W0;
+            var Clmin = Math.sqrt(3*Cd0/K);
+            var Vmin = Math.sqrt(2*W3_approx*9.81/rho_0/S/Clmin);
+            var W4_W3 = Math.exp(-E*BSFC_loiter*Vmin/1000/eff_loiter/0.866/L_Dmax);
+          } else if (checkbox2.checked) 
+          {
+            alert("Calculating For TurboJET");
+            var Cd0=(0.02686*S**(-0.1));                         
+            var K=(1/(Math.PI*AR)*(1.0447+0.2078/(Math.cos(sweep_c4*Math.PI/180)**2))); 
+            var A=1.02;
+            var c=-0.06;
+            var L_Dmax = 1/(2*(Cd0*K)**0.5);
+            var L_Dcruise = 0.866*L_Dmax;
+            var Clmin = Math.sqrt(3*Cd0/K);
+            var TSFC_cruise=((1-0.15*BR**0.65)*(1+0.28*(1+0.063*BR**2)*M_cruise)*(rho_Cruise/rho_0)**0.08);    
+            var W3_W2=(Math.exp(-(R*TSFC_cruise/(V_Cruise*L_Dcruise))));   
+            var W3_approx=(W3_W2*W2_W1*W1_W0*W0);                                      
+            var Vmin=(((K/Cd0)**0.25)*(((2*W3_approx*9.81)/(1.225*S))**0.5));                                  
+            var M_loiter=(Vmin/340);                                                                                                               
+            var TSFC_loiter=(0.7*(1-0.15*(BR**0.65))*(1+(0.28*(1+0.063*(BR**2))*M_loiter))*((rho_0/rho_0)**0.08));    
+            var W4_W3=(Math.exp(-(E)*TSFC_loiter/L_Dmax)) 
+          }else
+          { alert("Neither checkbox is checked!");
+          }
+        var W5_W0=W1_W0*W2_W1*W3_W2*W4_W3*W5_W4;
+        var Wf_W0=1.06*(1-W5_W0);
+        var W0_i=W0;
+        for (let i = 0; i < 20; i++){
+          var We_W0=((A*((W0_i)**c)));
+          var W0_f=((Wpass_crew/(1-We_W0-Wf_W0)));
+          if (W0_f==W0_i){break}
+          var W0_f=W0_i;
+        }
+        var We=We_W0*W0_i;
+        var Wf=Wf_W0*W0_i;
+        var Wo=Wpass_crew+We+Wf;
+
+        //Wing Loading
+        //Wing Loading based on Landing Distance
+        var S_land_110per=S_land*1.10;
+        var S_land_90per=S_land*0.90;
+        var P_land=0.8563*rho_0*sigma*Cl_max*S_land;
+        var P_land_110_per=0.8563*rho_0*sigma*Cl_max*S_land_110per;
+        var P_land_90_per=0.8563*rho_0*sigma*Cl_max*S_land_90per;
+        //Wing Loading Based on Prescribed Velocity
+        var Cfe=Cd0/Swet_S;
+        var b=(AR*S)**0.5;
+        var c_root=2*S/(b*(1+TR));
+        var c_tip=TR*c_root;
+        var slope=(c_root-c_tip)/(b/2);
+        var W_cabin = (N_seats * W_seat) + (N_Aisle * W_Aisle) + (N_Elbow * W_Elbow) + (2 * D_Seat_Cabinwall) + fuse_fact;
+        var W_fus = W_cabin + (2 * T_Cabin);
+        var y=W_fus/2;
+        var c_local=c_root-slope*y;
+        var S_exposed=((b-W_fus)/2)*(c_local+c_tip);
+        var S_wet_w=2*S_exposed*(1+1.2*t_c);
+        var kT=1+Sht_S+Svt_S;
+        var F1=kT*Cfe*(S_wet_w/S);
+        var F2=(Cd0-F1)/(W_S);
+        var q=0.5*rho_Cruise*(V_Cruise*1.1/3.6)**2;
+        var F3=K/(q**2);
+        var pv=(F1/F3)**0.5;
+        var cons_PV=(rho_Cruise*((V_Cruise*1.1/3.6)**3)/2000/0.85);
+        var tv=(rho_Cruise*((V_Cruise*1.1/3.6)**3)/2000/0.85)*(2*(F1/pv)+F2);
+        var tv_5percent=1.05*tv;
+        var a_PV=cons_PV*F3;
+        var b_PV=cons_PV*F2-tv_5percent;
+        var c_PV=cons_PV*F1;
+        var P_PV_max = (-b_PV + Math.sqrt(b_PV * b_PV - 4 * a_PV * c_PV)) / (2 * a_PV);
+        var P_PV_min = (-b_PV - Math.sqrt(b_PV * b_PV - 4 * a_PV * c_PV)) / (2 * a_PV);
+        //Wing Loading Based on Absolute Ceiling
+        var Cl_LDmax=(Cd0/K)**0.5;
+        var qhmax=W_S/Cl_LDmax;
+        var thmax_1=(4*K*(F1+F2*W_S))**0.5;
+        var P_AC1=(1/F2)*(((thmax_1**2)/(4*K))-F1);
+        var thmax_1_5plus=1.05*thmax_1;
+        var thmax_1_5minus=0.95*thmax_1;
+        var P_AC1_max=(1/F2)*(((thmax_1_5plus**2)/(4*K))-F1);
+        var P_AC1_min=(1/F2)*(((thmax_1_5minus**2)/(4*K))-F1);
+        var P_AC2_max=F1/((thmax_1_5plus/(2*qhmax))-F2);
+        var P_AC2_min=F1/((thmax_1_5minus/(2*qhmax))-F2);
+        var P_AC_min=Math.min(P_AC1_max,P_AC2_max)
+        var P_AC_max=Math.max(P_AC1_min,P_AC2_min)
+        //Wing Loading Based on Rate Of Climb
+        var Vopt=(R_C/(rho_0*F2))**(1/3);
+        var P_opt_R_C=0.5*rho_0*(Vopt**2)*(F1/K)**0.5;
+        var t_R_Cmin=R_C/Vopt+(0.5*rho_0*(Vopt**2))*(F1/P_opt_R_C+F2+K*P_opt_R_C/(0.5*rho_0*Vopt**2)**2);
+        var t_R_Cmin_5per=t_R_Cmin*1.05;
+        var a_R_C=K/(0.5*rho_0*Vopt**2)**2;
+        var b_R_C=F2-(t_R_Cmin_5per-R_C/Vopt)/(0.5*rho_0*Vopt**2);
+        var c_R_C=F1;
+        var P_R_C_max = (-b_R_C + Math.sqrt(b_R_C * b_R_C - 4 * a_R_C * c_R_C)) / (2 * a_R_C);
+        var P_R_C_min = (-b_R_C - Math.sqrt(b_R_C * b_R_C - 4 * a_R_C * c_R_C)) / (2 * a_R_C);
+        //Wing Loading Based on Range
+        var temp_coeff=R*BSFC_cruise*(q/1.1**2)/3600/eff_cruise;
+        var P_Range=(F1/F3/1.1**4)**0.5;
+        var wf_R=temp_coeff*(2*F1/P_Range+F2);
+        var wf_R_5percent=1.05*wf_R;
+        var a_R=F3*(1.1**4);
+        var b_R=F2-(wf_R_5percent/temp_coeff);
+        var c_R=F1;
+        var P_Range_max = (-b_R + Math.sqrt(b_R * b_R - 4 * a_R * c_R)) / (2 * a_R);
+        var P_Range_min = (-b_R - Math.sqrt(b_R * b_R - 4 * a_R * c_R)) / (2 * a_R);
+        //Wing Loading Based on Balanced Field Length
+        var ClTO=0.8*Cl_max;
+        if (engines==2){
+          var TOP=BFL/0.2613;
+          var P_BFL=TOP*sigma*ClTO*T_W_TO;}
+        else if (engines==3){
+          var TOP=BFL/0.2387;
+          var P_BFL=TOP*sigma*ClTO*T_W_TO;}
+        else if (engines==4){
+          var TOP=BFL/0.2196;
+          var P_BFL=TOP*sigma*ClTO*T_W_TO;}
+        if (engines==2){
+          var TOP_var=0.2613;}
+        else if (engines==3){
+          var TOP_var=0.2387}
+        else if (engines==4){
+          var TOP_var=0.2196}
+        var BFL_110percent=1.10*BFL;
+        var BFL_90percent=0.90*BFL;
+        if (engines==2){
+          TOP_110=BFL_110percent/0.2613;
+          TOP_90=BFL_90percent/0.2613;}
+        else if (engines==3){
+          TOP_110=BFL_110percent/0.2387;
+          TOP_90=BFL_90percent/0.2387;}
+        else if (engines==4){
+          TOP_110=BFL_110percent/0.2196;
+          TOP_90=BFL_90percent/0.2196;}
+        var P_BFL_max=TOP_110*sigma*ClTO*T_W_TO;
+        var P_BFL_min=TOP_90*sigma*ClTO*T_W_TO;
+        //Optimum Wing Loading
+        var P_opt_min=Math.max(P_land_90_per,P_PV_min,P_AC_min,P_R_C_min,P_Range_min,P_BFL_min);
+        var P_opt_max=Math.min(P_land_110_per,P_PV_max,P_AC_max,P_R_C_max,P_Range_max,P_BFL_max);
+        var W_S=SLSP*1000/Wo/0.4158
+        var W_Sopt=W_S*9.81;
+        var S=(Wo/W_S);
+        var Snew=S;
+
+        //Wing Sizing
+        if (M_cruise<=0.35){
+          var Cl_design=2*W_S/rho_Cruise/(V_Cruise/3.6)**2;
+          var b=Math.sqrt(AR*S);
+          var Cr=S/(b);
+          var Ct=Cr;
+          var Cw=Cr;
+          var L_ac_LErc=Cr/4;
+        } else if (M_cruise>=0.8){
+          var Cl_design=2*W_S/rho_Cruise/(V_Cruise/3.6)**2;
+          var b=Math.sqrt(AR*S);
+          var Cr=S/(b/2*(1+TR));
+          var Ct=Cr*TR;
+          function f(x, S, Cr, Ct, b) {
+            return 2 / S * (Cr - (Cr - Ct) / (b / 2) * x) ** 2;
+          }
+            let a = 0; // lower limit of integration
+            let upperLimit = b / 2; // upper limit of integration
+            let numSteps = 1000; // number of steps for numerical integration
+            let stepSize = (upperLimit - a) / numSteps; // calculate step size
+            let integral0 = 0; // initialize integral variable
+
+          for (let i = 0; i < numSteps; i++) {
+          let x = a + (i + 0.5) * stepSize; // calculate x at the midpoint of each step
+          integral0 += f(x, S, Cr, Ct, b) * stepSize; // add the area of the rectangle to the integral
+          }
+          let Cw = integral0;
+          var ymac=(Cr-Cw)*b/2/(Cr-Ct);
+          var sweep=Math.atan(Math.tan(sweep_c4etw*Math.PI/180)+(1/TR-1)/AR/(1/TR+1))*180/Math.PI
+          var x=Math.tan(sweep*np.pi/180)*y
+          var L_ac_LErc=x+0.25*Cw
+          var sweep_c2=Math.atan(Math.tan(sweep_c4etw*Math.PI/180)-4*0.25*(1-TR)/AR/(1+TR))
+          var beta=Math.sqrt(1-(V_Cruise/a_cruise)**2)
+          var Cl_alpha=(2*Math.PI*AR)/(2+(4+(AR**2)*(beta**2)*(1+Math.tan(sweep_c2)**2/beta**2))**0.5)*Math.PI/180
+          var Alpha_0l=-0.6*twist
+          var iw=Cl_design/Cl_alpha+Alpha_0l
+        } else {
+          var Cl_design=2*W_S*9.81/(rho_Cruise*(V_Cruise/3.6)**2);
+          var b=Math.sqrt(S*AR);
+          var Cr=S/(winginfus*b+2*((1+TR)/2)*(1-winginfus)/2*b)
+          var Ct=TR*Cr
+          var int1=2*(Cr**2)/S*b/2*winginfus
+          function f(z, S, Cr, Ct, b) {
+            return 2/S*(Cr-(Cr-Ct)/((1-winginfus)*b/2)*(z-b*winginfus/2))**2;
+          }
+            let a2 = b*winginfus / 2 ; // lower limit of integration
+            let upperLimit2 = b/2; // upper limit of integration
+            let numSteps2 = 100; // number of steps for numerical integration
+            let stepSize2 = (upperLimit2 - a2) / numSteps2; // calculate step size
+            let integral2 = 0; // initialize integral variable
+          for (let i2 = 0; i2 < numSteps2; i2++) {
+          let z = a2 + (i2 + 0.5) * stepSize2; // calculate x at the midpoint of each step
+          integral2 += f(z, S, Cr, Ct, b) * stepSize2; // add the area of the rectangle to the integral
+          }
+          let int2 = integral2;
+          var Cw=int1+int2
+          var ymac=(Cr-Cw)*b/2*(1-winginfus)/(Cr-Ct)+winginfus*b/2;
+          var L_ac_LErc=(ymac-b*winginfus/2)*Math.tan(sweep_LEtw*Math.PI/180)+Cw/4;
+          var Cre=S*2/b-Ct;
+          var TRe=Ct/Cre        
+          var sweep_c2=(Math.atan(Math.tan(sweep_c4etw*Math.PI/180)-4*0.25*(1-TRe)/AR/(1+TRe)))*180/Math.PI
+          var beta=Math.sqrt(1-(M_cruise)**2)
+          var Cl_alpha=(2*Math.PI*AR)/(2+(4+(AR**2)*(beta**2)*(1+Math.tan(sweep_c2*Math.PI/180)**2/beta**2))**0.5)*Math.PI/180
+          var Alpha_0l=-0.6*twist                       
+          var iw=Cl_design/Cl_alpha+Alpha_0l
+          var twistangle=twist
+          var dihedralangle=dihedral
+        }
+        //Fuselage Calculations Verified
+        var W_cabin = (N_seats * W_seat) + (N_Aisle * W_Aisle) + (N_Elbow * W_Elbow) + (2 * D_Seat_Cabinwall) + fuse_fact;
+        var W_fus = W_cabin + (2 * T_Cabin);
+        var L_midfus = seat_rows * seat_pitch + L_galley + L_door + L_seat_galley;
+        var L_fus = L_Nose + L_Cockpit + L_midfus + L_tailcone;
+
+        //Horizontal Tail
+        var Lac = L_fus * Lac_L_fus;
+        var Lht = Lht_Cw * Cw;
+        var Lac_Htail = Lht + Lac;
+        var Sht_S = Cht / Lht_Cw;
+        var Sht =Sht_S * S;
+        var Se = Se_Sht * Sht;
+        var bht = (Math.sqrt(ARht * Sht));
+        var Crht = Sht * 2 / bht / (1 + TRht);
+        var Ctht = Crht * TRht;
+        var C_ht = (2 / 3) * Crht * (1 + TRht + TRht ** 2) / (1 + TRht);
+        var ymac_ht = (Crht-C_ht)*bht/2/(Crht-Ctht);
+        var L_acht_LErc = ymac_ht * Math.tan(Sweep_LEht * Math.PI / 180) + C_ht / 4;
+
+        //Vertical Tail Sizing
+        var Lht_Lvt=Lht__Lvt_b*b;
+        var Lvt=Lht-Lht_Lvt;
+        var Lvt_b=Lvt/b;
+        var Lac_Vtail=Lvt+Lac;
+        var Svt_S=Cvt/Lvt_b;
+        var Svt=Svt_S*S;
+        var Sr=Sr_Svt*Svt;
+        var Hvt=(ARvt*Svt)**0.5;
+        var Crvt=Svt*2/Hvt/(1+TRvt);
+        var Ctvt=Crvt*TRvt;
+        var C_vt=2/3*Crvt*(1+TRvt+TRvt**2)/(1+TRvt);
+        var ymac_vt=(Crvt-C_vt)*Hvt/(Crvt-Ctvt);
+        var L_acvt_LErc=ymac_vt * Math.tan(Sweep_LEvt * Math.PI / 180) + C_vt / 4;
+
+        //Centre Of Gravity
+        //Wing
+        var S_exposed=S-2.88*Cr;
+        var Wwing=S_exposed*Cons_Wing*9.81;
+        var Wwing_Wo=Wwing/Wo/9.81*100;
+        var CG_wing_LErc=L_LEmac+cgwingpermac*Cw/100;
+        //Horizontal Tail
+        var Wht=Sht*Cons_HT*9.81;
+        var Wht_Wo=Wht/Wo/9.81*100;
+        var Lht_LEr_LEmac=ymac_ht*Math.tan(Sweep_LEht*Math.PI/180);
+        var CG_ht_LErc=(Lht_LEr_LEmac+cghtpermac*C_ht/100);
+        //Vertical Tail
+        var Wvt=Svt*Cons_VT*9.81;
+        var Wvt_Wo=Wvt/Wo/9.81*10;
+        var Lvt_LEr_LEmac=ymac_vt * Math.tan(Sweep_LEvt * Math.PI / 180);
+        var CG_vt_LErc=Lvt_LEr_LEmac+cgvtpermac*C_vt/100;
+        //Engine
+        var Wengine=(2*Cons_Eng*W_Engine*9.81);
+        var Wengine_Wo=(Wengine/Wo/9.81*100);
+        var CG_eng_LE=(-boss_prop_LEwing+cgenginperlen*L_Engine/100)
+        //Landing Gear
+        var Wlg=(Wlg_Wo*Wo*9.81/100);
+        var Wnwlg=(0.15*Wlg);
+        var Wmwlg=(0.85*Wlg);
+        var CG_nwLG=(-0.9*base_wheel);
+        var CG_mwLG=(0.1*base_wheel);
+        //Fuselage
+        var S_wet_nose=(Math.PI*L_Nose*D_end_nose/2);
+        var S_wet_cockpit=(Math.PI*(W_fus+D_end_nose)*L_Cockpit/2);
+        var S_wet_midfus=(Math.PI*L_midfus*W_fus);
+        var S_wet_tailcone=(Math.PI*L_tailcone*W_fus/2);
+        var S_wet_fus=(S_wet_nose+S_wet_cockpit+S_wet_midfus+S_wet_tailcone);
+        var Wfus=(S_wet_fus*Cons_Fus*9.81);
+        var Wfus_Wo=(Wfus/Wo/9.81*100);
+        var CG_fus=(cgfusperlen*L_fus/100);
+        var Wfus_sys=((We_W0-(Wwing_Wo+Wht_Wo+Wvt_Wo+Wengine_Wo+Wlg_Wo)/100)*Wo*9.81);
+        //Fuel
+        var Wfuel=(Wf_W0*Wo*9.81);
+        var Wfuel_Wo=(Wfuel/Wo/9.81*100);
+        var CG_fuel_LErc=CG_wing_LErc;
+        //Payload and Crew
+        var Wpay=Wpass_crew*9.81
+        var Wpay_Wo=(Wpay/Wo/9.81*100)
+        var CG_pay=L_Nose+L_Cockpit+(L_midfus+L_rearcabin)/2
+        //CG
+        var xlew_wing=CG_wing_LErc;
+        var xlew_engine=CG_eng_LE;
+        var xlew_fuel=CG_fuel_LErc;
+        var xlew_ht=L_ac_LErc+Lht+(0.4-0.25)*C_ht;
+        var xlew_vt=L_ac_LErc+Lvt+(0.4-0.25)*C_vt;
+        var xlew_nwlg=L_ac_LErc+CG_nwLG;
+        var xlew_mwlg=L_ac_LErc+CG_mwLG;
+        var xlew_fus=CG_fus;
+        var xlew_pay=CG_pay;
+        //CG variation
+        var xlew=((Wwing*xlew_wing+Wengine*xlew_engine+Wfuel*xlew_fuel+Wht*xlew_ht+Wvt*xlew_vt+Wnwlg*xlew_nwlg+Wmwlg*xlew_mwlg+Wfus_sys*xlew_fus+Wpay*xlew_pay)-(Wwing+Wengine+Wfuel+Wht+Wvt+Wnwlg+Wmwlg+Wfus_sys+Wpay)*L_ac_LErc)/((Wwing+Wengine+Wfuel+Wht+Wvt+Wnwlg+Wmwlg+Wfus_sys+Wpay)-(Wwing+Wengine+Wfuel+Wht+Wvt+Wnwlg+Wmwlg));
+        var CG_Airplane=(xlew+L_ac_LErc);
+        var xlew_wofuel=(((Wwing+Wengine+Wfuel+Wht+Wvt+Wnwlg+Wmwlg)*xlew+(Wwing*xlew_wing+Wengine*xlew_engine+Wfuel*xlew_fuel+Wht*xlew_ht+Wvt*xlew_vt+Wnwlg*xlew_nwlg+Wmwlg*xlew_mwlg+Wfus_sys*xlew_fus+Wpay*xlew_pay)-(Wfuel*xlew+Wfuel*xlew_fuel))/((Wwing+Wengine+Wfuel+Wht+Wvt+Wnwlg+Wmwlg+Wfus_sys+Wpay-Wfuel)));
+        var CG_Airplane_wofuel=xlew_wofuel;
+        var xlew_wofuelpayload=(((Wwing+Wengine+Wfuel+Wht+Wvt+Wnwlg+Wmwlg)*xlew+(Wwing*xlew_wing+Wengine*xlew_engine+Wfuel*xlew_fuel+Wht*xlew_ht+Wvt*xlew_vt+Wnwlg*xlew_nwlg+Wmwlg*xlew_mwlg+Wfus_sys*xlew_fus+Wpay*xlew_pay)-(Wfuel*xlew+Wfuel*xlew_fuel+Wpass*9.81*xlew_pay))/((Wwing+Wengine+Wfuel+Wht+Wvt+Wnwlg+Wmwlg+Wfus_sys+Wpay-Wfuel-Wpass*9.81)));
+        var CG_Airplane_wofuelpayload=xlew_wofuelpayload;
+        var xlew_wopayload=(((Wwing+Wengine+Wfuel+Wht+Wvt+Wnwlg+Wmwlg)*xlew+(Wwing*xlew_wing+Wengine*xlew_engine+Wfuel*xlew_fuel+Wht*xlew_ht+Wvt*xlew_vt+Wnwlg*xlew_nwlg+Wmwlg*xlew_mwlg+Wfus_sys*xlew_fus+Wpay*xlew_pay)-(Wpass*9.81*xlew_pay))/((Wwing+Wengine+Wfuel+Wht+Wvt+Wnwlg+Wmwlg+Wfus_sys+Wpay-Wpass*9.81)));
+        var CG_Airplane_wopayload=xlew_wopayload;
+
+        //Flight Mechanics
+        var Vs=(Math.sqrt(2*W_S*9.81/rho_0/CLmaxflap)*3.6);
+        var C_l=(2*W_S*9.81/rho_Cruise/(V_Cruise/3.6)**2);
+        var Cd=(Cd0+K*C_l**2);
+        var L_D=(C_l/Cd);
+        var Lift=(C_l*(0.5*rho_0*(V_Cruise/3.6)**2*S));
+        var Drag=(Cd*(0.5*rho_0*(V_Cruise/3.6)**2*S));
+        //Take-off Parameter
+        var V1=(1.16*Vs);
+        var V2=(1.086*V1);
+        var Sto=(1.21*Wo*9.81/(9.81*1.225*S*CLmaxnoflap*T_W_TO));
+        //Rate of Climb
+        var T=0.2*Wo*9.81;
+        var RClimb=((2*T-Drag)*V2/3.6/Wo/9.81);
+        var AClimb=(Math.asin(RClimb/Vs)*180/Math.PI);
+        //Level Turn
+        var n=(Lift/Wo/9.81/Math.cos(Math.PI/180*30));
+        var Rt=((V_Cruise/3.6)**2/(9.81*(Math.sqrt(n**2-1))));
+        var omega=(V_Cruise/3.6/Rt);
+        //Gliding
+        var phi=(Math.atan(1/L_Dcruise)*180/Math.PI);
+        //Landing Distance
+        var Va=1.3*Vs/3.6;
+        var S_landdist=(-(Va**2)/2/deacc);
+
+        //Results Display Code
+        //Aircraft Weight Estimation Results
+        document.getElementById("Wpass_crew").value = Wpass_crew;
+        document.getElementById("R").value = R;
+        document.getElementById("M_cruise").value = M_cruise;
+        document.getElementById("Cd0").value = Cd0;
+        document.getElementById("K").value = K;
+        document.getElementById("L_Dmax").value = L_Dmax;
+        document.getElementById("L_Dcruise").value = L_Dcruise;
+        document.getElementById("W3_W2").value = W3_W2;
+        document.getElementById("W3_approx").value = W3_approx;
+        document.getElementById("Clmin").value = Clmin;
+        document.getElementById("Vmin").value = Vmin;
+        document.getElementById("W4_W3").value = W4_W3;
+        document.getElementById("W5_W0").value = W5_W0;
+        document.getElementById("Wf_W0").value = Wf_W0;
+        document.getElementById("We_W0").value = We_W0;
+        document.getElementById("Wf").value = Wf;
+        document.getElementById("We").value = We;
+        document.getElementById("Wo").value = Wo;
+        //Wing Loading
+        document.getElementById("P_land").value = P_land;
+        document.getElementById("P_land_90_per").value = P_land_90_per;
+        document.getElementById("P_land_110_per").value = P_land_110_per;
+        document.getElementById("pv").value = pv;
+        document.getElementById("P_PV_min").value = P_PV_min;
+        document.getElementById("P_PV_max").value = P_PV_max;
+        document.getElementById("P_AC1").value = P_AC1;
+        document.getElementById("P_AC_min").value = P_AC_min;
+        document.getElementById("P_AC_max").value = P_AC_max;
+        document.getElementById("P_R_C_min").value = P_R_C_min;
+        document.getElementById("P_R_C_max").value = P_R_C_max;
+        document.getElementById("P_opt_R_C").value = P_opt_R_C;
+        document.getElementById("P_Range").value = P_Range;
+        document.getElementById("P_Range_min").value = P_Range_min;
+        document.getElementById("P_Range_max").value = P_Range_max;
+        document.getElementById("P_BFL").value = P_BFL;
+        document.getElementById("P_BFL_min").value = P_BFL_min;
+        document.getElementById("P_BFL_max").value = P_BFL_max;
+        document.getElementById("P_opt_min").value = P_opt_min;
+        document.getElementById("P_opt_max").value = P_opt_max;
+        document.getElementById("W_Sopt").value = W_Sopt;
+        //Wing Sizimg Results
+        document.getElementById("Cl_design").value = Cl_design;
+        document.getElementById("b").value = b;
+        document.getElementById("Snew").value = Snew;
+        document.getElementById("Cr").value = Cr;
+        document.getElementById("Ct").value = Ct;
+        document.getElementById("Cw").value = Cw;
+        document.getElementById("ymac").value = ymac;
+        document.getElementById("L_ac_LErc").value = L_ac_LErc;
+        document.getElementById("Cre").value = Cre;
+        document.getElementById("TRe").value = TRe;
+        document.getElementById("sweep_c2").value = sweep_c2;
+        document.getElementById("twistangle").value = twistangle;
+        document.getElementById("iw").value = iw;
+        document.getElementById("dihedralangle").value = dihedralangle;
+
+        //Fuselage Sizing Results
+        document.getElementById("W_fus").value = W_fus;
+        document.getElementById("W_cabin").value = W_cabin;
+        document.getElementById("L_fus").value = L_fus;
+        //Horizonatal Tail Sizing Results
+        document.getElementById("Lht").value = Lht;
+        document.getElementById("Lac_Htail").value = Lac_Htail;
+        document.getElementById("Sht").value = Sht;
+        document.getElementById("Se").value = Se;
+        document.getElementById("bht").value = bht;
+        document.getElementById("Crht").value = Crht;
+        document.getElementById("Ctht").value = Ctht;
+        document.getElementById("C_ht").value = C_ht;
+        document.getElementById("ymac_ht").value = ymac_ht;
+        document.getElementById("L_acht_LErc").value = L_acht_LErc;
+        //Vertical Tail Sizing Results
+        document.getElementById("Lvt").value = Lvt;
+        document.getElementById("Lac_Vtail").value = Lac_Vtail;
+        document.getElementById("Svt").value = Svt;
+        document.getElementById("Sr").value = Sr;
+        document.getElementById("Hvt").value = Hvt;
+        document.getElementById("Crvt").value = Crvt;
+        document.getElementById("Ctvt").value = Ctvt;
+        document.getElementById("C_vt").value = C_vt;
+        document.getElementById("ymac_vt").value = ymac_vt;
+        document.getElementById("L_acvt_LErc").value = L_acvt_LErc;
+        //Centre of Gravity Results
+        document.getElementById("S_exposed").value = S_exposed;
+        document.getElementById("Wwing").value = Wwing;
+        document.getElementById("Wwing_Wo").value = Wwing_Wo;
+        document.getElementById("CG_wing_LErc").value = CG_wing_LErc;
+        document.getElementById("Wht").value = Wht;
+        document.getElementById("Wht_Wo").value = Wht_Wo;
+        document.getElementById("CG_ht_LErc").value = CG_ht_LErc;
+        document.getElementById("Wvt").value = Wvt;
+        document.getElementById("Wvt_Wo").value = Wvt_Wo;
+        document.getElementById("CG_vt_LErc").value = CG_vt_LErc;
+        document.getElementById("Wengine").value = Wengine;
+        document.getElementById("Wengine_Wo").value = Wengine_Wo;
+        document.getElementById("CG_eng_LE").value = CG_eng_LE;
+        document.getElementById("Wlg").value = Wlg;
+        document.getElementById("Wnwlg").value = Wnwlg;
+        document.getElementById("Wmwlg").value = Wmwlg;
+        document.getElementById("CG_nwLG").value = CG_nwLG;
+        document.getElementById("CG_mwLG").value = CG_mwLG;
+        document.getElementById("S_wet_fus").value = S_wet_fus;
+        document.getElementById("Wfus").value = Wfus;
+        document.getElementById("Wfus_Wo").value = Wfus_Wo;
+        document.getElementById("CG_fus").value = CG_fus;
+        document.getElementById("Wfus_sys").value = Wfus_sys;
+        document.getElementById("Wfuel").value = Wfuel;
+        document.getElementById("Wfuel_Wo").value = Wfuel_Wo;
+        document.getElementById("CG_fuel_LErc").value = CG_fuel_LErc;
+        document.getElementById("Wpay").value = Wpay;
+        document.getElementById("Wpay_Wo").value = Wpay_Wo;
+        document.getElementById("CG_pay").value = CG_pay;
+        document.getElementById("CG_Airplane").value = CG_Airplane;
+        document.getElementById("CG_Airplane_wofuel").value = CG_Airplane_wofuel;
+        document.getElementById("CG_Airplane_wofuelpayload").value = CG_Airplane_wofuelpayload;
+        document.getElementById("CG_Airplane_wopayload").value = CG_Airplane_wopayload;
+        //Flight Mechanics
+        document.getElementById("Vs").value = Vs;
+        document.getElementById("C_l").value = C_l;
+        document.getElementById("Cd").value = Cd;
+        document.getElementById("L_D").value = L_D;
+        document.getElementById("Lift").value = Lift;
+        document.getElementById("Drag").value = Drag;
+        document.getElementById("V1").value = V1;
+        document.getElementById("V2").value = V2;
+        document.getElementById("Sto").value = Sto;
+        document.getElementById("RClimb").value = RClimb;
+        document.getElementById("AClimb").value = AClimb;
+        document.getElementById("n").value = n;
+        document.getElementById("Rt").value = Rt;
+        document.getElementById("omega").value = omega;
+        document.getElementById("phi").value = phi;
+        document.getElementById("S_landdist").value = S_landdist;
+      }
+    </script>
+  </body>
+</html>
+
