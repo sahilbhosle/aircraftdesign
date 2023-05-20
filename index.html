@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Tool For Aircraft Design</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
   </head>
   <body>
     <h1>Aircraft Design Tool</h1>
@@ -12,191 +14,375 @@
         <input type="checkbox" id="checkbox2" name="checkbox2">
         <br>
         <br>
-      <label for="name"> No. of Passengers </label> <input type="text" id="passengers" placeholder="60" value="60">
+      <label for="name"> No. of Passengers </label>
+      <input type="text" id="passengers" placeholder="60" value="60">
       <br>
-      <label for="name"> Payload Per Passengers </label> <input type="text" id="pay_per_pass" placeholder="100" value="100"><label for="name"> Kg</label>
+      <label for="name"> Payload Per Passengers </label> 
+      <input type="text" id="pay_per_pass" placeholder="100" value="100">
+      <label for="name"> Kg</label>
       <br>
-      <label for="name"> No. of Crew </label> <input type="text" id="Crew" placeholder="4" value="4">
-      <br>
-      <label for="name"> Payload Per Crew </label> <input type="text" id="pay_per_crew" placeholder="85" value="85"> <label for="name"> Kg </label>
-      <br>
-      <label for="name"> Cruise Altitude </label> <input type="text" id="H_Cruise" placeholder="4.5" value="4.5"> <label for="name"> Km </label>
-      <br>
-      <label for="name"> Cruise Velocity </label> <input type="text" id="V_Cruise" placeholder="500" value="500"> <label for="name"> Km/hr </label>
-      <br>
-      <label for="name"> Speed of Sound at Cruise Altitude </label> <input type="text" id="a_cruise" placeholder="1160" value="1160"> <label for="name"> Km/hr </label>
-      <br>
-      <label for="name"> Density at Cruise Altitude </label> <input type="text" id="rho_Cruise" placeholder="0.7768" value="0.7768"> <label for="name"> Kg/m^3 </label>
-      <br>
-      <label for="name"> Safe Range </label> <input type="text" id="S_Range" placeholder="1300" value="1300"> <label for="name"> Km </label>
-      <br>
-      <label for="name"> Diversion Range </label> <input type="text" id="D_Range" placeholder="300" value="300"> <label for="name"> Km </label>
-      <br>
-      <label for="name"> Head Wind </label> <input type="text" id="HW" placeholder="15" value="15"> <label for="name"> m/s </label>
-      <br>
-      <label for="name"> Aspect Ratio </label> <input type="text" id="AR" placeholder="12" value="12"> <label for="name">  </label>
-      <br>
-      <label for="name"> Wing Area </label> <input type="text" id="S" placeholder="61.43" value="61.43"> <label for="name"> m^2 </label>
-      <br>
-      <label for="name"> Taper Ratio </label> <input type="text" id="TR" placeholder="0.5" value="0.5"> <label for="name"> </label>
-      <br>
-      <label for="name"> Bypass Ratio </label> <input type="text" id="BR" placeholder="6"  value="6"> <label for="name">  </label>
-      <br>
-      <label for="name"> Sweep c4 </label> <input type="text" id="sweep_c4" placeholder="22"  value="22"> <label for="name"> deg </label>
-      <br>
-      <label for="name"> Sweep c4 ETW</label> <input type="text" id="sweep_c4etw" placeholder="3.9"  value="3.9"> <label for="name"> deg </label>
-      <br>
-      <label for="name"> Twist </label> <input type="text" id="twist" placeholder="3"  value="3"> <label for="name"> deg </label>
-      <br>
-      <label for="name"> Dihedral </label> <input type="text" id="dihedral" placeholder="3"  value="3"> <label for="name"> deg </label>
-      <br>
-      <label for="name"> Sweep LEtw</label> <input type="text" id="sweep_LEtw" placeholder="6.07"  value="6.07"> <label for="name"> deg </label>
-      <br>
-      <label for="name"> Wing In Fuselage </label> <input type="text" id="winginfus" placeholder="0.35"  value="0.35"> <label for="name"> % </label>
-      <br>
-      <label for="name"> BSFC Cruise </label> <input type="text" id="BSFC_cruise" placeholder="2.7" value="2.7"> <label for="name"> N/KW/hr </label>
-      <br>
-      <label for="name"> Efficiency Cruise </label> <input type="text" id="eff_cruise" placeholder="0.85"  value="0.85"> <label for="name">  </label>
-      <br>
-      <label for="name"> BSFC Loiter </label> <input type="text" id="BSFC_loiter" placeholder="2.85" value="2.85"> <label for="name"> N/KW/hr </label>
-      <br>
-      <label for="name"> Efficiency Loiter </label> <input type="text" id="eff_loiter" placeholder="0.75"  value="0.75"> <label for="name">  </label>
-      <br>
-      <label for="name"> Assumed Weight </label> <input type="text" id="W0" placeholder="21500" value="21500"> <label for="name"> Kgf </label>
-      <br>
-      <label for="name"> W1/W0 </label> <input type="text" id="W1_W0" placeholder="0.98" value="0.98"> <label for="name"> </label>
-      <br>
-      <label for="name"> W2/W1 </label> <input type="text" id="W2_W1" placeholder="0.99"  value="0.99"> <label for="name">  </label>
-      <br>
-      <label for="name"> W5/W4 </label> <input type="text" id="W5_W4" placeholder="0.98" value="0.98"> <label for="name">  </label>
-      <br>
-      <label for="name"> Sea Level Static Power (SLSP) </label> <input type="text" id="SLSP" placeholder="3222" value="3222"> <label for="name"> KW </label>
-      <br>
-      <label for="name"> Landing Distance </label> <input type="text" id="S_land" placeholder="1200" value="1200"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Cl_max </label> <input type="text" id="Cl_max" placeholder="2.7" value="2.7"> <label for="name">  </label>
-      <br>
-      <label for="name"> Take-off Distance </label> <input type="text" id="BFL" placeholder="1400" value="1400"> <label for="name"> m </label>
-      <br>
-      <label for="name"> (T/W)to </label> <input type="text" id="T_W_TO" placeholder="0.3" value="0.3"> <label for="name">  </label>
-      <br>
-      <label for="name"> Engines </label> <input type="text" id="engines" placeholder="2" value="2"> <label for="name">  </label>
-      <br>
-      <label for="name"> Rate of Climb </label> <input type="text" id="R_C" placeholder="6.09" value="6.09"> <label for="name"> m/s </label>
-      <br>
-      <label for="name"> W/S </label> <input type="text" id="W_S" placeholder="3570" value="3570"> <label for="name"> N/m^2 </label>
-      <br>
-      <label for="name"> t/c </label> <input type="text" id="t_c" placeholder="0.16" value="0.16"> <label for="name">  </label>
-      <br>
-      <label for="name"> Sht/S </label> <input type="text" id="Sht_S" placeholder="0.21" value="0.21"> <label for="name">  </label>
-      <br>
-      <label for="name"> Svt/S </label> <input type="text" id="Svt_S" placeholder="0.20" value="0.20"> <label for="name">  </label>
-      <br>
-      <label for="name"> Swet/S </label> <input type="text" id="Swet_S" placeholder="5" value="5"> <label for="name">  </label>
-      <br>
-      <label for="name"> Sigma </label> <input type="text" id="sigma" placeholder="1" value="1"> <label for="name">  </label>
-      <br>
-      <label for="name"> No. of Seats </label> <input type="text" id="N_seats" placeholder="4" value="4"> <label for="name">  </label>
-      <br>
-      <label for="name"> Width of Seat </label> <input type="text" id="W_seat" placeholder="0.44" value="0.44"> <label for="name"> m </label>
-      <br>
-      <label for="name"> No. of Elbow Rest </label> <input type="text" id="N_Elbow" placeholder="6" value="6"> <label for="name">  </label>
-      <br>
-      <label for="name"> Width of Elbow </label> <input type="text" id="W_Elbow" placeholder="0.05" value="0.05"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Dist. Seat Cabinwall </label> <input type="text" id="D_Seat_Cabinwall" placeholder="0.02" value="0.02"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Thickness of Cabin </label> <input type="text" id="T_Cabin" placeholder="0.1" value="0.1"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Number of Aisle </label> <input type="text" id="N_Aisle" placeholder="1" value="1"> <label for="name">  </label>
-      <br>
-      <label for="name"> Width of Aisle </label> <input type="text" id="W_Aisle" placeholder="0.46" value="0.46"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Fuselage Factor </label> <input type="text" id="fuse_fact" placeholder="0.12" value="0.12"> <label for="name">  </label>
-      <br>
-      <label for="name"> Length ofCockpit </label> <input type="text" id="L_Cockpit" placeholder="2.54" value="2.54"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Length of Nose </label> <input type="text" id="L_Nose" placeholder="0.7" value="0.7"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Seat Rows </label> <input type="text" id="seat_rows" placeholder="13" value="13"> <label for="name">  </label>
-      <br>
-      <label for="name"> Seat Pitch </label> <input type="text" id="seat_pitch" placeholder="0.81" value="0.81"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Length of Galley </label> <input type="text" id="L_galley" placeholder="0.6" value="0.6"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Length of Door </label> <input type="text" id="L_door" placeholder="0.7" value="0.7"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Length Seat Galley </label> <input type="text" id="L_seat_galley" placeholder="1.0" value="1.0"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Length of Taicone </label> <input type="text" id="L_tailcone" placeholder="9" value="9"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Dia. end_nose </label> <input type="text" id="D_end_nose" placeholder="1.64" value="1.64"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Length of Rearcabin </label> <input type="text" id="L_rearcabin" placeholder="2.11" value="2.11"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Lac/Lfus </label> <input type="text" id="Lac_L_fus" placeholder="0.42" value="0.42"> <label for="name">  </label>
-      <br>
-      <label for="name"> Lht/Cw </label> <input type="text" id="Lht_Cw" placeholder="5.8" value="5.8"> <label for="name">  </label>
-      <br>
-      <label for="name"> Cht </label> <input type="text" id="Cht" placeholder="1.1" value="1.1"> <label for="name">  </label>
-      <br>
-      <label for="name"> Aspect Ratio of HT </label> <input type="text" id="ARht" placeholder="5" value="5"> <label for="name">  </label>
-      <br>
-      <label for="name"> Taper Ratio of HT </label> <input type="text" id="TRht" placeholder="0.5" value="0.5"> <label for="name">  </label>
-      <br>
-      <label for="name"> Se/Sht </label> <input type="text" id="Se_Sht" placeholder="0.35" value="0.35"> <label for="name">  </label>
-      <br>
-      <label for="name"> Sweep_LEht </label> <input type="text" id="Sweep_LEht" placeholder="11.24" value="11.24"> <label for="name"> deg </label>
-      <br>
-      <label for="name"> L_LEmac </label> <input type="text" id="L_LEmac" placeholder="0.237" value="0.237"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Lht-Lvt/b </label> <input type="text" id="Lht__Lvt_b" placeholder="0.05" value="0.05"> <label for="name">  </label>
-      <br>
-      <label for="name"> Cvt </label> <input type="text" id="Cvt" placeholder="0.1" value="0.1"> <label for="name">  </label>
-      <br>
-      <label for="name"> Aspect Ratio of VT </label> <input type="text" id="ARvt" placeholder="1.95" value="1.95"> <label for="name">  </label>
-      <br>
-      <label for="name"> Taper Ratio of VT </label> <input type="text" id="TRvt" placeholder="0.7" value="0.7"> <label for="name">  </label>
-      <br>
-      <label for="name"> Sr/Svt </label> <input type="text" id="Sr_Svt" placeholder="0.3" value="0.3"> <label for="name">  </label>
-      <br>
-      <label for="name"> Sweep_LEvt </label> <input type="text" id="Sweep_LEvt" placeholder="30" value="30"> <label for="name"> deg </label>
-      <br>
-      <label for="name"> Weight of Engine </label> <input type="text" id="W_Engine" placeholder="450" value="450"> <label for="name"> Kgf </label>
-      <br>
-      <label for="name"> Length of Engine </label> <input type="text" id="L_Engine" placeholder="2.13" value="2.13"> <label for="name"> m </label>
-      <br>
-      <label for="name"> boss_prop_LEwing </label> <input type="text" id="boss_prop_LEwing" placeholder="1.58" value="1.58"> <label for="name"> m </label>
-      <br>
-      <label for="name"> base_wheel </label> <input type="text" id="base_wheel" placeholder="9.78" value="9.78"> <label for="name"> m </label>
-      <br>
-      <label for="name"> Cons_Wing </label> <input type="text" id="Cons_Wing" placeholder="49" value="49"> <label for="name">  </label>
-      <br>
-      <label for="name"> cgwingpermac </label> <input type="text" id="cgwingpermac" placeholder="40" value="40"> <label for="name"> % </label>
-      <br>
-      <label for="name"> Cons_HT </label> <input type="text" id="Cons_HT" placeholder="27" value="27"> <label for="name">  </label>
-      <br>
-      <label for="name"> cghtpermac </label> <input type="text" id="cghtpermac" placeholder="40" value="40"> <label for="name"> % </label>
-      <br>
-      <label for="name"> Cons_VT </label> <input type="text" id="Cons_VT" placeholder="27" value="27"> <label for="name">  </label>
-      <br>
-      <label for="name"> cgvtpermac </label> <input type="text" id="cgvtpermac" placeholder="40" value="40"> <label for="name"> % </label>
-      <br>
-      <label for="name"> Cons_Eng </label> <input type="text" id="Cons_Eng" placeholder="1.3" value="1.3"> <label for="name">  </label>
-      <br>
-      <label for="name"> cgenginperlen </label> <input type="text" id="cgenginperlen" placeholder="40" value="40"> <label for="name"> % </label>
-      <br>
-      <label for="name"> Cons_Fus </label> <input type="text" id="Cons_Fus" placeholder="24" value="24"> <label for="name">  </label>
-      <br>
-      <label for="name"> cgfusperlen </label> <input type="text" id="cgfusperlen" placeholder="45" value="45"> <label for="name"> % </label>
-      <br>
-      <label for="name"> Wlg_Wo </label> <input type="text" id="Wlg_Wo" placeholder="4.3" value="4.3"> <label for="name"> % </label>
-      <br>
-      <label for="name"> CLmaxflap </label> <input type="text" id="CLmaxflap" placeholder="2.7" value="2.7"> <label for="name">  </label>
-      <br>
-      <label for="name"> CLmaxnoflap </label> <input type="text" id="CLmaxnoflap" placeholder="1.4" value="1.4"> <label for="name">  </label>
-      <br>
-      <label for="name"> de-acceleration </label> <input type="text" id="deacc" placeholder="-2.13" value="-2.13"> <label for="name"> m/S^2 </label>
+      <label for="name"> No. of Crew </label> 
+      <input type="text" id="Crew" placeholder="4" value="4">
+      <br>
+      <label for="name"> Payload Per Crew </label> 
+      <input type="text" id="pay_per_crew" placeholder="85" value="85"> 
+      <label for="name"> Kg </label>
+      <br>
+      <label for="name"> Cruise Altitude </label> 
+      <input type="text" id="H_Cruise" placeholder="4.5" value="4.5"> 
+      <label for="name"> Km </label>
+      <br>
+      <label for="name"> Cruise Velocity </label> 
+      <input type="text" id="V_Cruise" placeholder="500" value="500"> 
+      <label for="name"> Km/hr </label>
+      <br>
+      <label for="name"> Speed of Sound at Cruise Altitude </label> 
+      <input type="text" id="a_cruise" placeholder="1160" value="1160"> 
+      <label for="name"> Km/hr </label>
+      <br>
+      <label for="name"> Density at Cruise Altitude </label> 
+      <input type="text" id="rho_Cruise" placeholder="0.7768" value="0.7768"> 
+      <label for="name"> Kg/m^3 </label>
+      <br>
+      <label for="name"> Safe Range </label> 
+      <input type="text" id="S_Range" placeholder="1300" value="1300"> 
+      <label for="name"> Km </label>
+      <br>
+      <label for="name"> Diversion Range </label> 
+      <input type="text" id="D_Range" placeholder="300" value="300"> 
+      <label for="name"> Km </label>
+      <br>
+      <label for="name"> Head Wind </label> 
+      <input type="text" id="HW" placeholder="15" value="15"> 
+      <label for="name"> m/s </label>
+      <br>
+      <label for="name"> Aspect Ratio </label> 
+      <input type="text" id="AR" placeholder="12" value="12"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Wing Area </label> 
+      <input type="text" id="S" placeholder="61.43" value="61.43"> 
+      <label for="name"> m^2 </label>
+      <br>
+      <label for="name"> Taper Ratio </label> 
+      <input type="text" id="TR" placeholder="0.5" value="0.5"> 
+      <label for="name"> </label>
+      <br>
+      <label for="name"> Bypass Ratio </label> 
+      <input type="text" id="BR" placeholder="6"  value="6"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Sweep c4 </label> 
+      <input type="text" id="sweep_c4" placeholder="22"  value="22"> 
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Sweep c4 ETW</label> 
+      <input type="text" id="sweep_c4etw" placeholder="3.9"  value="3.9"> 
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Twist </label> 
+      <input type="text" id="twist" placeholder="3"  value="3"> 
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Dihedral </label> 
+      <input type="text" id="dihedral" placeholder="3"  value="3">
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Sweep LEtw</label> 
+      <input type="text" id="sweep_LEtw" placeholder="6.07"  value="6.07"> 
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Wing In Fuselage </label> 
+      <input type="text" id="winginfus" placeholder="0.35"  value="0.35"> 
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> BSFC Cruise </label> 
+      <input type="text" id="BSFC_cruise" placeholder="2.7" value="2.7"> 
+      <label for="name"> N/KW/hr </label>
+      <br>
+      <label for="name"> Efficiency Cruise </label> 
+      <input type="text" id="eff_cruise" placeholder="0.85"  value="0.85"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> BSFC Loiter </label> 
+      <input type="text" id="BSFC_loiter" placeholder="2.85" value="2.85"> 
+      <label for="name"> N/KW/hr </label>
+      <br>
+      <label for="name"> Efficiency Loiter </label> 
+      <input type="text" id="eff_loiter" placeholder="0.75"  value="0.75"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Assumed Weight </label> 
+      <input type="text" id="W0" placeholder="21500" value="21500"> 
+      <label for="name"> Kgf </label>
+      <br>
+      <label for="name"> W1/W0 </label> 
+      <input type="text" id="W1_W0" placeholder="0.98" value="0.98"> 
+      <label for="name"> </label>
+      <br>
+      <label for="name"> W2/W1 </label> 
+      <input type="text" id="W2_W1" placeholder="0.99"  value="0.99"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> W5/W4 </label> 
+      <input type="text" id="W5_W4" placeholder="0.98" value="0.98"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Sea Level Static Power (SLSP) </label> 
+      <input type="text" id="SLSP" placeholder="3222" value="3222"> 
+      <label for="name"> KW </label>
+      <br>
+      <label for="name"> Landing Distance </label> 
+      <input type="text" id="S_land" placeholder="1200" value="1200">
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Cl_max </label> 
+      <input type="text" id="Cl_max" placeholder="2.7" value="2.7"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Take-off Distance </label> 
+      <input type="text" id="BFL" placeholder="1400" value="1400"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> (T/W)to </label> 
+      <input type="text" id="T_W_TO" placeholder="0.3" value="0.3"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Engines </label> 
+      <input type="text" id="engines" placeholder="2" value="2"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Rate of Climb </label> 
+      <input type="text" id="R_C" placeholder="6.09" value="6.09"> 
+      <label for="name"> m/s </label>
+      <br>
+      <label for="name"> W/S </label> 
+      <input type="text" id="W_S" placeholder="3570" value="3570"> 
+      <label for="name"> N/m^2 </label>
+      <br>
+      <label for="name"> t/c </label> 
+      <input type="text" id="t_c" placeholder="0.16" value="0.16"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Sht/S </label> 
+      <input type="text" id="Sht_S" placeholder="0.21" value="0.21"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Svt/S </label> 
+      <input type="text" id="Svt_S" placeholder="0.20" value="0.20"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Swet/S </label> 
+      <input type="text" id="Swet_S" placeholder="5" value="5"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Sigma </label>
+      <input type="text" id="sigma" placeholder="1" value="1">
+      <label for="name">  </label>
+      <br>
+      <label for="name"> No. of Seats </label>
+      <input type="text" id="N_seats" placeholder="4" value="4"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Width of Seat </label> 
+      <input type="text" id="W_seat" placeholder="0.44" value="0.44"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> No. of Elbow Rest </label> 
+      <input type="text" id="N_Elbow" placeholder="6" value="6"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Width of Elbow </label> 
+      <input type="text" id="W_Elbow" placeholder="0.05" value="0.05"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Dist. Seat Cabinwall </label> 
+      <input type="text" id="D_Seat_Cabinwall" placeholder="0.02" value="0.02"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Thickness of Cabin </label> 
+      <input type="text" id="T_Cabin" placeholder="0.1" value="0.1"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Number of Aisle </label> 
+      <input type="text" id="N_Aisle" placeholder="1" value="1"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Width of Aisle </label> 
+      <input type="text" id="W_Aisle" placeholder="0.46" value="0.46"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Fuselage Factor </label> 
+      <input type="text" id="fuse_fact" placeholder="0.12" value="0.12"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Length ofCockpit </label>
+      <input type="text" id="L_Cockpit" placeholder="2.54" value="2.54"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Nose </label> 
+      <input type="text" id="L_Nose" placeholder="0.7" value="0.7"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Seat Rows </label> 
+      <input type="text" id="seat_rows" placeholder="13" value="13"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Seat Pitch </label> 
+      <input type="text" id="seat_pitch" placeholder="0.81" value="0.81"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Galley </label> 
+      <input type="text" id="L_galley" placeholder="0.6" value="0.6"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Door </label> 
+      <input type="text" id="L_door" placeholder="0.7" value="0.7"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Length Seat Galley </label> 
+      <input type="text" id="L_seat_galley" placeholder="1.0" value="1.0"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Taicone </label> 
+      <input type="text" id="L_tailcone" placeholder="9" value="9"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Dia. end_nose </label>
+      <input type="text" id="D_end_nose" placeholder="1.64" value="1.64"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Length of Rearcabin </label> 
+      <input type="text" id="L_rearcabin" placeholder="2.11" value="2.11"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Lac/Lfus </label> 
+      <input type="text" id="Lac_L_fus" placeholder="0.42" value="0.42"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Lht/Cw </label> 
+      <input type="text" id="Lht_Cw" placeholder="5.8" value="5.8"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Cht </label>
+      <input type="text" id="Cht" placeholder="1.1" value="1.1"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Aspect Ratio of HT </label>
+      <input type="text" id="ARht" placeholder="5" value="5"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Taper Ratio of HT </label> 
+      <input type="text" id="TRht" placeholder="0.5" value="0.5"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Se/Sht </label> 
+      <input type="text" id="Se_Sht" placeholder="0.35" value="0.35"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Sweep_LEht </label> 
+      <input type="text" id="Sweep_LEht" placeholder="11.24" value="11.24"> 
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> L_LEmac </label> 
+      <input type="text" id="L_LEmac" placeholder="0.237" value="0.237"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Lht-Lvt/b </label> 
+      <input type="text" id="Lht__Lvt_b" placeholder="0.05" value="0.05"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Cvt </label> 
+      <input type="text" id="Cvt" placeholder="0.1" value="0.1"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Aspect Ratio of VT </label> 
+      <input type="text" id="ARvt" placeholder="1.95" value="1.95"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Taper Ratio of VT </label> 
+      <input type="text" id="TRvt" placeholder="0.7" value="0.7"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Sr/Svt </label> 
+      <input type="text" id="Sr_Svt" placeholder="0.3" value="0.3"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Sweep_LEvt </label> 
+      <input type="text" id="Sweep_LEvt" placeholder="30" value="30"> 
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Weight of Engine </label> 
+      <input type="text" id="W_Engine" placeholder="450" value="450"> 
+      <label for="name"> Kgf </label>
+      <br>
+      <label for="name"> Length of Engine </label> 
+      <input type="text" id="L_Engine" placeholder="2.13" value="2.13"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> boss_prop_LEwing </label> 
+      <input type="text" id="boss_prop_LEwing" placeholder="1.58" value="1.58"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> base_wheel </label> 
+      <input type="text" id="base_wheel" placeholder="9.78" value="9.78"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Cons_Wing </label> 
+      <input type="text" id="Cons_Wing" placeholder="49" value="49"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> cgwingpermac </label> 
+      <input type="text" id="cgwingpermac" placeholder="40" value="40"> 
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> Cons_HT </label> 
+      <input type="text" id="Cons_HT" placeholder="27" value="27"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> cghtpermac </label> 
+      <input type="text" id="cghtpermac" placeholder="40" value="40"> 
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> Cons_VT </label> 
+      <input type="text" id="Cons_VT" placeholder="27" value="27"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> cgvtpermac </label> 
+      <input type="text" id="cgvtpermac" placeholder="40" value="40"> 
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> Cons_Eng </label> 
+      <input type="text" id="Cons_Eng" placeholder="1.3" value="1.3"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> cgenginperlen </label> 
+      <input type="text" id="cgenginperlen" placeholder="40" value="40">
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> Cons_Fus </label> 
+      <input type="text" id="Cons_Fus" placeholder="24" value="24"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> cgfusperlen </label> 
+      <input type="text" id="cgfusperlen" placeholder="45" value="45"> 
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> Wlg_Wo </label> 
+      <input type="text" id="Wlg_Wo" placeholder="4.3" value="4.3"> 
+      <label for="name"> % </label>
+      <br>
+      <label for="name"> CLmaxflap </label> 
+      <input type="text" id="CLmaxflap" placeholder="2.7" value="2.7"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> CLmaxnoflap </label> 
+      <input type="text" id="CLmaxnoflap" placeholder="1.4" value="1.4"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> de-acceleration </label> 
+      <input type="text" id="deacc" placeholder="-2.13" value="-2.13">
+      <label for="name"> m/S^2 </label>
       <br>
       <input type="button" value="Calculate" onclick="add()">
       <br>
@@ -638,15 +824,15 @@
       <input type="text" id="CG_Airplane" placeholder="CG_Airplane">
       <label for="name"> m </label>
       <br>
-      <label for="name"> The c.g. of the airplane Full payload, but no fuel is (CG_Airplane_wofuel): </label>
+      <label for="name"> The c.g. of the airplane Without Fuel Full Payload (CG_Airplane_wofuel): </label>
       <input type="text" id="CG_Airplane_wofuel" placeholder="CG_Airplane_wofuel">
       <label for="name"> m </label>
       <br>
-      <label for="name"> The c.g. of the airplane No payload and no fuel is (CG_Airplane_wofuelpayload): </label>
+      <label for="name"> The c.g. of the airplane Without Fuel Without Payload (CG_Airplane_wofuelpayload): </label>
       <input type="text" id="CG_Airplane_wofuelpayload" placeholder="CG_Airplane_wofuelpayload">
       <label for="name"> m </label>
       <br>
-      <label for="name"> The c.g. of the airplane No payload but full fuel is (CG_Airplane_wopayload): </label>
+      <label for="name"> The c.g. of the airplane Full Fuel Without Payload (CG_Airplane_wopayload): </label>
       <input type="text" id="CG_Airplane_wopayload" placeholder="CG_Airplane_wopayload">
       <label for="name"> m </label>
       <br>
@@ -729,7 +915,16 @@
       <label for="name"> m </label>
       <br>
     </form>
-    
+    <div id="wsldplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="wspvplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="wsacplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="wsrocplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="wsrangeplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="wsbflplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="CG_variation" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="dragpolar" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="rocplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="aocplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
     <script>
       function add() 
       {
@@ -1315,6 +1510,149 @@
         document.getElementById("omega").value = omega;
         document.getElementById("phi").value = phi;
         document.getElementById("S_landdist").value = S_landdist;
+
+        //plots
+        //Wing Loading
+        //Based on Landing Distance
+        let expld = "(0.8563*rho_0*sigma*Cl_max*y_ld)";
+        const xld = [];
+        const yld = [];
+        for (let y_ld = S_land*0.80; y_ld <= S_land*1.20; y_ld += (S_land*(1.2-0.8))/100) {
+        yld.push(y_ld);
+        xld.push(eval(expld));
+        }
+        var sld110per = {x: [P_land_110_per],y: [S_land_110per],name:"110% S_land",type: 'scatter'};
+        var optsld = {x: [P_land],y: [S_land],name:"S_land",type: 'scatter'};
+        var sld90per = {x: [P_land_90_per],y: [S_land_90per],name:"90% S_land",type: 'scatter'};
+        const datald = [{x: xld ,y: yld,name:"variation",mode:"lines"},sld90per,optsld,sld110per];
+        const layoutld = {xaxis: {title: "Wing Loading (N/m^2)"},yaxis: {title: "Landing Distance (m)"},title: "Wing Loading Based on Landing Distance"};
+        Plotly.newPlot("wsldplot", datald, layoutld);
+        //Based on Prescribed Velocity
+        let exppv = "(cons_PV)*(F1/x_pv+F2+F3*x_pv)";
+        const xpv = [];
+        const ypv = [];
+        for (let x_pv = P_PV_min*0.85; x_pv <= P_PV_max*1.15; x_pv += (pv*(1.15-0.85))/10) {
+        xpv.push(x_pv);
+        ypv.push(eval(exppv));
+        }
+        var tv110per1 = {x: [P_PV_min],y: [tv_5percent],name:"110% tv1",type: 'scatter'};
+        var opttv = {x: [pv],y: [tv],name:"tv",type: 'scatter'};
+        var tv110per2 = {x: [P_PV_max],y: [tv_5percent],name:"110% tv2",type: 'scatter'};
+        const datapv = [{x: xpv ,y: ypv,name:"variation",mode:"lines"},tv110per1,opttv,tv110per2];
+        const layoutpv = {xaxis: {title: "Wing Loading (N/m^2)"},yaxis: {title: "(tv)min"},title: "Wing Loading Based on Prescribed Velocity"};
+        Plotly.newPlot("wspvplot", datapv, layoutpv);
+        //Based on Absoloute Ceiling
+        let expac1 = "(1/F2)*(((y_ac1**2)/(4*K))-F1)";
+        const xac1 = [];
+        const yac1 = [];
+        for (let y_ac1 = thmax_1*0.80; y_ac1 <= thmax_1*1.20; y_ac1 += (thmax_1*(1.20-0.80))/10) {
+        yac1.push(y_ac1);
+        xac1.push(eval(expac1));
+        }
+        let expac2 = "F1/((y_ac2/(2*qhmax))-F2)";
+        const xac2 = [];
+        const yac2 = [];
+        for (let y_ac2 = thmax_1*0.80; y_ac2 <= thmax_1*1.20; y_ac2 += (thmax_1*(1.20-0.80))/10) {
+        yac2.push(y_ac2);
+        xac2.push(eval(expac2));
+        }
+        var optthmax = {x: [P_AC1],y: [thmax_1],name:"tv",type: 'scatter'};
+        var thmax95per1 = {x: [P_AC1_min],y: [thmax_1_5minus],name:"95% thmax1",type: 'scatter'};
+        var thmax105per1 = {x: [P_AC1_max],y: [thmax_1_5plus],name:"105% thmax1",type: 'scatter'};
+        var thmax95per2 = {x: [P_AC2_min],y: [thmax_1_5minus],name:"95% thmax2",type: 'scatter'};
+        var thmax105per2 = {x: [P_AC2_max],y: [thmax_1_5plus],name:"105% thmax2",type: 'scatter'};
+        const dataac = [{x: xac1 ,y: yac1,name:"variation1",mode:"lines"},{x: xac2 ,y: yac2,name:"variation2",mode:"lines"},optthmax,thmax95per1,thmax105per1,thmax95per2,thmax105per2];
+        const layoutac = {xaxis: {title: "Wing Loading (N/m^2)"},yaxis: {title: "(th)max"},title: "Wing Loading Based on Absolute Ceiling"};
+        Plotly.newPlot("wsacplot", dataac, layoutac);
+        //Based on Rate of Climb
+        let exproc = "R_C/Vopt+(0.5*rho_0*(Vopt**2))*(F1/x_roc+F2+K*x_roc/(0.5*rho_0*Vopt**2)**2)";
+        const xroc = [];
+        const yroc = [];
+        for (let x_roc = P_R_C_min*0.85; x_roc <= P_R_C_max*1.15; x_roc += (P_opt_R_C*(1.15-0.85))/10) {
+        xroc.push(x_roc);
+        yroc.push(eval(exproc));
+        }
+        var t_R_C110per1 = {x: [P_R_C_min],y: [t_R_Cmin_5per],name:"110% t_sls1",type: 'scatter'};
+        var optt_R_C = {x: [P_opt_R_C],y: [t_R_Cmin],name:"t_sls",type: 'scatter'};
+        var t_R_C110per2 = {x: [P_R_C_max],y: [t_R_Cmin_5per],name:"110% t_sls2",type: 'scatter'};
+        const dataroc = [{x: xroc ,y: yroc,name:"variation",mode:"lines"},t_R_C110per1,optt_R_C,t_R_C110per2];
+        const layoutroc = {xaxis: {title: "Wing Loading (N/m^2)"},yaxis: {title: "(t_R/C)min"},title: "Wing Loading Based on Rate of Climb"};
+        Plotly.newPlot("wsrocplot", dataroc, layoutroc);
+        //Based on Range
+        let exprange = "temp_coeff*(F1/x_range+F2+F3*x_range*(1.1**4))";
+        const xrange = [];
+        const yrange = [];
+        for (let x_range = P_Range_min*0.85; x_range <= P_Range_max*1.15; x_range += (P_Range*(1.15-0.85))/10) {
+        xrange.push(x_range);
+        yrange.push(eval(exprange));
+        }
+        var t_Range_110per1 = {x: [P_Range_min],y: [wf_R_5percent],name:"110% Wf1",type: 'scatter'};
+        var optt_Range = {x: [P_Range],y: [wf_R],name:"Wf",type: 'scatter'};
+        var t_Range_110per2 = {x: [P_Range_max],y: [wf_R_5percent],name:"110% Wf2",type: 'scatter'};
+        const datarange = [{x: xrange ,y: yrange,name:"variation",mode:"lines"},t_Range_110per1,optt_Range,t_Range_110per2];
+        const layoutrange = {xaxis: {title: "Wing Loading (N/m^2)"},yaxis: {title: "(Wf)min"},title: "Wing Loading Based on Range"};
+        Plotly.newPlot("wsrangeplot", datarange, layoutrange);
+        //Based on BFL
+        let expbfl = "y_bfl*sigma*ClTO*T_W_TO/TOP_var";
+        const xbfl = [];
+        const ybfl = [];
+        for (let y_bfl = BFL*0.80; y_bfl <= BFL*1.20; y_bfl += (BFL*(1.20-0.80))/10) {
+        ybfl.push(y_bfl);
+        xbfl.push(eval(expbfl));
+        }
+        var t_BFL_90per = {x: [P_BFL_min],y: [TOP_90*TOP_var],name:"90% BFL",type: 'scatter'};
+        var optt_BFL = {x: [P_BFL],y: [TOP*TOP_var],name:"BFL",type: 'scatter'};
+        var t_BFL_110per = {x: [P_BFL_max],y: [TOP_110*TOP_var],name:"110% BFL",type: 'scatter'};
+        const databfl = [{x: xbfl ,y: ybfl,name:"variation",mode:"lines"},t_BFL_90per,optt_BFL,t_BFL_110per];
+        const layoutbfl = {xaxis: {title: "Wing Loading (N/m^2)"},yaxis: {title: "BFL (m)"},title: "Wing Loading Based on Balanced Field Length"};
+        Plotly.newPlot("wsbflplot", databfl, layoutbfl);
+
+        //CG Variation 
+        var pltCG_Airplane = {x: [CG_Airplane],y: [0],name: 'CGAirplane',type: 'scatter'};
+        var pltCG_Airplane_wofuel = {x: [CG_Airplane_wofuel],y: [0],name: 'CG_Airplane Without Fuel Full Payload',type: 'scatter'};
+        var pltCG_Airplane_wofuelpayload = {x: [CG_Airplane_wofuelpayload],y: [0],name: 'CG_Airplane Without Fuel Without Payload',type: 'scatter'};
+        var pltCG_Airplane_wopayload = {x: [CG_Airplane_wopayload],y: [0],name: 'CG_Airplane Full Fuel Without Payload',type: 'scatter'};
+        var datacg = [pltCG_Airplane, pltCG_Airplane_wofuel, pltCG_Airplane_wofuelpayload, pltCG_Airplane_wopayload];
+        var layoutcg = {xaxis: {title: "CG Locations"},title: "CG Variation",legend: {x: 1,xanchor: 'right',y: 1}}
+        Plotly.newPlot('CG_variation', datacg,layoutcg);
+
+        //Drag Polar
+        let expdp = "Cd0+ K*y**2";
+        const xdp = [];
+        const ydp = [];
+        for (let y = 0; y <= 2; y += 0.1) {
+        ydp.push(y);
+        xdp.push(eval(expdp));
+        }
+        const datadp = [{x: xdp ,y: ydp,mode:"lines"}];
+        const layoutdp = {xaxis: {title: "Coefficient of Drag (Cd)"},yaxis: {title: "Coefficient of Lift (Cl)"},title: "Drag Polar"};
+        Plotly.newPlot("dragpolar", datadp, layoutdp);
+ 
+        //Rate of Climb
+        let exprc = "-H_Cruise*1000/RClimb*x_rc+H_Cruise*1000";
+        const xrc = [];
+        const yrc = [];
+        for (let x_rc = 0; x_rc <= RClimb; x_rc += 0.1) {
+        xrc.push(x_rc);
+        yrc.push(eval(exprc));
+        }
+        const datarc = [{x: xrc ,y: yrc,mode:"lines"}];
+        const layoutrc = {xaxis: {title: "Maximum Rate of Climb (m/s)"},yaxis: {title: "Altitude (m)"},title: "Maximum Rate of Climb vs Altitude"};
+        Plotly.newPlot("rocplot", datarc, layoutrc);
+
+        //Angle of Climb
+        let expac = "Math.asin(RClimb/y_ac)*180/Math.PI";
+        var zac=[0,H_Cruise];
+        const xac = [];
+        const yac = [];
+        for (let y_ac = Vs; y_ac <= 250; y_ac += 30) {
+        yac.push(y_ac);
+        xac.push(eval(expac));
+        }
+        const dataaoc = [{x: xac ,y: zac,mode:"lines"}];
+        const layoutaoc = {xaxis: {title: "Angle of Climb (deg)"},yaxis: {title: "Altitude (m)"},title: "Angle of Climb vs Altitude"};
+        Plotly.newPlot("aocplot", dataaoc, layoutaoc);
+              
       }
     </script>
   </body>
