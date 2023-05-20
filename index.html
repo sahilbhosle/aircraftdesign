@@ -72,30 +72,6 @@
       <input type="text" id="BR" placeholder="6"  value="6"> 
       <label for="name">  </label>
       <br>
-      <label for="name"> Sweep c4 </label> 
-      <input type="text" id="sweep_c4" placeholder="22"  value="22"> 
-      <label for="name"> deg </label>
-      <br>
-      <label for="name"> Sweep c4 ETW</label> 
-      <input type="text" id="sweep_c4etw" placeholder="3.9"  value="3.9"> 
-      <label for="name"> deg </label>
-      <br>
-      <label for="name"> Twist </label> 
-      <input type="text" id="twist" placeholder="3"  value="3"> 
-      <label for="name"> deg </label>
-      <br>
-      <label for="name"> Dihedral </label> 
-      <input type="text" id="dihedral" placeholder="3"  value="3">
-      <label for="name"> deg </label>
-      <br>
-      <label for="name"> Sweep LEtw</label> 
-      <input type="text" id="sweep_LEtw" placeholder="6.07"  value="6.07"> 
-      <label for="name"> deg </label>
-      <br>
-      <label for="name"> Wing In Fuselage </label> 
-      <input type="text" id="winginfus" placeholder="0.35"  value="0.35"> 
-      <label for="name"> % </label>
-      <br>
       <label for="name"> BSFC Cruise </label> 
       <input type="text" id="BSFC_cruise" placeholder="2.7" value="2.7"> 
       <label for="name"> N/KW/hr </label>
@@ -148,10 +124,6 @@
       <input type="text" id="T_W_TO" placeholder="0.3" value="0.3"> 
       <label for="name">  </label>
       <br>
-      <label for="name"> Engines </label> 
-      <input type="text" id="engines" placeholder="2" value="2"> 
-      <label for="name">  </label>
-      <br>
       <label for="name"> Rate of Climb </label> 
       <input type="text" id="R_C" placeholder="6.09" value="6.09"> 
       <label for="name"> m/s </label>
@@ -164,20 +136,32 @@
       <input type="text" id="t_c" placeholder="0.16" value="0.16"> 
       <label for="name">  </label>
       <br>
-      <label for="name"> Sht/S </label> 
-      <input type="text" id="Sht_S" placeholder="0.21" value="0.21"> 
-      <label for="name">  </label>
+      <label for="name"> Sweep c4 </label> 
+      <input type="text" id="sweep_c4" placeholder="22"  value="22"> 
+      <label for="name"> deg </label>
       <br>
-      <label for="name"> Svt/S </label> 
-      <input type="text" id="Svt_S" placeholder="0.20" value="0.20"> 
-      <label for="name">  </label>
+      <label for="name"> Sweep c4 ETW</label> 
+      <input type="text" id="sweep_c4etw" placeholder="3.9"  value="3.9"> 
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Twist </label> 
+      <input type="text" id="twist" placeholder="3"  value="3"> 
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Dihedral </label> 
+      <input type="text" id="dihedral" placeholder="3"  value="3">
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Sweep LEtw</label> 
+      <input type="text" id="sweep_LEtw" placeholder="6.07"  value="6.07"> 
+      <label for="name"> deg </label>
+      <br>
+      <label for="name"> Wing In Fuselage </label> 
+      <input type="text" id="winginfus" placeholder="0.35"  value="0.35"> 
+      <label for="name"> % </label>
       <br>
       <label for="name"> Swet/S </label> 
       <input type="text" id="Swet_S" placeholder="5" value="5"> 
-      <label for="name">  </label>
-      <br>
-      <label for="name"> Sigma </label>
-      <input type="text" id="sigma" placeholder="1" value="1">
       <label for="name">  </label>
       <br>
       <label for="name"> No. of Seats </label>
@@ -186,6 +170,14 @@
       <br>
       <label for="name"> Width of Seat </label> 
       <input type="text" id="W_seat" placeholder="0.44" value="0.44"> 
+      <label for="name"> m </label>
+      <br>
+      <label for="name"> Seat Rows </label> 
+      <input type="text" id="seat_rows" placeholder="13" value="13"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Seat Pitch </label> 
+      <input type="text" id="seat_pitch" placeholder="0.81" value="0.81"> 
       <label for="name"> m </label>
       <br>
       <label for="name"> No. of Elbow Rest </label> 
@@ -216,20 +208,12 @@
       <input type="text" id="fuse_fact" placeholder="0.12" value="0.12"> 
       <label for="name">  </label>
       <br>
-      <label for="name"> Length ofCockpit </label>
-      <input type="text" id="L_Cockpit" placeholder="2.54" value="2.54"> 
-      <label for="name"> m </label>
-      <br>
       <label for="name"> Length of Nose </label> 
       <input type="text" id="L_Nose" placeholder="0.7" value="0.7"> 
       <label for="name"> m </label>
       <br>
-      <label for="name"> Seat Rows </label> 
-      <input type="text" id="seat_rows" placeholder="13" value="13"> 
-      <label for="name">  </label>
-      <br>
-      <label for="name"> Seat Pitch </label> 
-      <input type="text" id="seat_pitch" placeholder="0.81" value="0.81"> 
+      <label for="name"> Length of Cockpit </label>
+      <input type="text" id="L_Cockpit" placeholder="2.54" value="2.54"> 
       <label for="name"> m </label>
       <br>
       <label for="name"> Length of Galley </label> 
@@ -244,20 +228,24 @@
       <input type="text" id="L_seat_galley" placeholder="1.0" value="1.0"> 
       <label for="name"> m </label>
       <br>
-      <label for="name"> Length of Taicone </label> 
+      <label for="name"> Length of Tailcone </label> 
       <input type="text" id="L_tailcone" placeholder="9" value="9"> 
-      <label for="name"> m </label>
-      <br>
-      <label for="name"> Dia. end_nose </label>
-      <input type="text" id="D_end_nose" placeholder="1.64" value="1.64"> 
       <label for="name"> m </label>
       <br>
       <label for="name"> Length of Rearcabin </label> 
       <input type="text" id="L_rearcabin" placeholder="2.11" value="2.11"> 
       <label for="name"> m </label>
       <br>
+      <label for="name"> Diameter end_nose </label>
+      <input type="text" id="D_end_nose" placeholder="1.64" value="1.64"> 
+      <label for="name"> m </label>
+      <br>
       <label for="name"> Lac/Lfus </label> 
       <input type="text" id="Lac_L_fus" placeholder="0.42" value="0.42"> 
+      <label for="name">  </label>
+      <br>
+      <label for="name"> Sht/S </label> 
+      <input type="text" id="Sht_S" placeholder="0.21" value="0.21"> 
       <label for="name">  </label>
       <br>
       <label for="name"> Lht/Cw </label> 
@@ -292,6 +280,10 @@
       <input type="text" id="Lht__Lvt_b" placeholder="0.05" value="0.05"> 
       <label for="name">  </label>
       <br>
+      <label for="name"> Svt/S </label> 
+      <input type="text" id="Svt_S" placeholder="0.20" value="0.20"> 
+      <label for="name">  </label>
+      <br>
       <label for="name"> Cvt </label> 
       <input type="text" id="Cvt" placeholder="0.1" value="0.1"> 
       <label for="name">  </label>
@@ -311,6 +303,10 @@
       <label for="name"> Sweep_LEvt </label> 
       <input type="text" id="Sweep_LEvt" placeholder="30" value="30"> 
       <label for="name"> deg </label>
+      <br>
+      <label for="name"> Number of Engines </label> 
+      <input type="text" id="engines" placeholder="2" value="2"> 
+      <label for="name">  </label>
       <br>
       <label for="name"> Weight of Engine </label> 
       <input type="text" id="W_Engine" placeholder="450" value="450"> 
@@ -923,14 +919,16 @@
     <div id="wsbflplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
     <div id="CG_variation" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
     <div id="dragpolar" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
-    <div id="rocplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
-    <div id="aocplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <div id="stallspeed" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
+    <!--<div id="rocplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>-->
+    <!--<div id="aocplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>-->
     <script>
       function add() 
       {
         const rho_0=1.225;
         const E=0.5;
         const a_0=340;
+        const sigma=1;
         //Input parameters fetch from User
         var passengers = parseFloat(document.getElementById("passengers").value);
         var pay_per_pass = parseFloat(document.getElementById("pay_per_pass").value);
@@ -968,8 +966,7 @@
         var t_c = parseFloat(document.getElementById("t_c").value);    
         var Sht_S = parseFloat(document.getElementById("Sht_S").value);    
         var Svt_S = parseFloat(document.getElementById("Svt_S").value);    
-        var Swet_S = parseFloat(document.getElementById("Swet_S").value);    
-        var sigma = parseFloat(document.getElementById("sigma").value);    
+        var Swet_S = parseFloat(document.getElementById("Swet_S").value);        
         var BSFC_cruise = parseFloat(document.getElementById("BSFC_cruise").value);    
         var BSFC_loiter = parseFloat(document.getElementById("BSFC_loiter").value);    
         var eff_cruise = parseFloat(document.getElementById("eff_cruise").value);    
@@ -1628,31 +1625,46 @@
         const layoutdp = {xaxis: {title: "Coefficient of Drag (Cd)"},yaxis: {title: "Coefficient of Lift (Cl)"},title: "Drag Polar"};
         Plotly.newPlot("dragpolar", datadp, layoutdp);
  
-        //Rate of Climb
-        let exprc = "-H_Cruise*1000/RClimb*x_rc+H_Cruise*1000";
-        const xrc = [];
-        const yrc = [];
-        for (let x_rc = 0; x_rc <= RClimb; x_rc += 0.1) {
-        xrc.push(x_rc);
-        yrc.push(eval(exprc));
+        const ya = [0, 2, 4, 6,8,10];
+        const rhovar = [1.225, 1.006, 0.819, 0.659, 0.525, 0.413];
+        const line1 = [];
+        for (let i = 0; i < ya.length; i++) {
+         const speed = Math.sqrt(2 * W_S * 9.18 / rhovar[i] / CLmaxflap) * 3.6;
+         line1.push(speed);
         }
-        const datarc = [{x: xrc ,y: yrc,mode:"lines"}];
-        const layoutrc = {xaxis: {title: "Maximum Rate of Climb (m/s)"},yaxis: {title: "Altitude (m)"},title: "Maximum Rate of Climb vs Altitude"};
-        Plotly.newPlot("rocplot", datarc, layoutrc);
+        const line2 = [];
+        for (let i = 0; i < ya.length; i++) {
+         const speed = Math.sqrt(2 * W_S * 9.18 / rhovar[i] / CLmaxnoflap) * 3.6;
+         line2.push(speed);
+        }
+        var datass = [{x:line1,y:ya,name:"Clmax=2.7 (with flap setting for landing)",mode:"lines"}, {x:line2,y:ya,name:"Clmax=1.4 (no flaps)",mode:"lines"}];
+        var layoutss = {xaxis: {title: "Stall Speed (Vs) Kmph",range: [0, 400]},yaxis: {title: "Altitude (Km)"},title: "Stalling Speed vs Altitude",legend: { x: 1, xanchor: 'right', y: 1 }};
+        Plotly.newPlot("stallspeed", datass, layoutss);
+
+        //Rate of Climb
+        //let exprc = "-H_Cruise*1000/RClimb*x_rc+H_Cruise*1000";
+        //const xrc = [];
+        //const yrc = [];
+        //for (let x_rc = 0; x_rc <= RClimb; x_rc += 0.1) {
+        //xrc.push(x_rc);
+        //yrc.push(eval(exprc));
+        //}
+        //const datarc = [{x: xrc ,y: yrc,mode:"lines"}];
+        //const layoutrc = {xaxis: {title: "Maximum Rate of Climb (m/s)"},yaxis: {title: "Altitude (m)"},title: "Maximum Rate of Climb vs Altitude"};
+        //Plotly.newPlot("rocplot", datarc, layoutrc);
 
         //Angle of Climb
-        let expac = "Math.asin(RClimb/y_ac)*180/Math.PI";
-        var zac=[0,H_Cruise];
-        const xac = [];
-        const yac = [];
-        for (let y_ac = Vs; y_ac <= 250; y_ac += 30) {
-        yac.push(y_ac);
-        xac.push(eval(expac));
-        }
-        const dataaoc = [{x: xac ,y: zac,mode:"lines"}];
-        const layoutaoc = {xaxis: {title: "Angle of Climb (deg)"},yaxis: {title: "Altitude (m)"},title: "Angle of Climb vs Altitude"};
-        Plotly.newPlot("aocplot", dataaoc, layoutaoc);
-              
+        //let expac = "Math.asin(RClimb/y_ac)*180/Math.PI";
+        //var zac=[0,H_Cruise];
+        //const xac = [];
+        //const yac = [];
+        //for (let y_ac = Vs; y_ac <= 250; y_ac += 30) {
+        //yac.push(y_ac);
+        //xac.push(eval(expac));
+        //}
+        //const dataaoc = [{x: xac ,y: zac,mode:"lines"}];
+        //const layoutaoc = {xaxis: {title: "Angle of Climb (deg)"},yaxis: {title: "Altitude (m)"},title: "Angle of Climb vs Altitude"};
+        //Plotly.newPlot("aocplot", dataaoc, layoutaoc); 
       }
     </script>
   </body>
