@@ -3,7 +3,7 @@
   <head>
     <title>Tool For Aircraft Design</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
   </head>
   <body>
     <h1>Aircraft Design Tool</h1>
@@ -922,6 +922,7 @@
     <div id="stallspeed" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>
     <!--<div id="rocplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>-->
     <!--<div id="aocplot" style="height:100%;max-height:500px;width:100%;max-width:500px"></div>-->
+    <div id="aircraftplot" style="height:100%;max-height:800px;width:100%;max-width:800px"></div>
     <script>
       function add() 
       {
@@ -1624,7 +1625,7 @@
         const datadp = [{x: xdp ,y: ydp,mode:"lines"}];
         const layoutdp = {xaxis: {title: "Coefficient of Drag (Cd)"},yaxis: {title: "Coefficient of Lift (Cl)"},title: "Drag Polar"};
         Plotly.newPlot("dragpolar", datadp, layoutdp);
- 
+        //Stalling Speed
         const ya = [0, 2, 4, 6,8,10];
         const rhovar = [1.225, 1.006, 0.819, 0.659, 0.525, 0.413];
         const line1 = [];
@@ -1641,6 +1642,80 @@
         var layoutss = {xaxis: {title: "Stall Speed (Vs) Kmph",range: [0, 400]},yaxis: {title: "Altitude (Km)"},title: "Stalling Speed vs Altitude",legend: { x: 1, xanchor: 'right', y: 1 }};
         Plotly.newPlot("stallspeed", datass, layoutss);
 
+        //Aircraft Plot
+        if (checkbox1.checked){
+          var Hwing=W_fus*2/6
+          var Hht=Hvt*0.75
+          var xvvt=xlew_vt/2
+          var xhht=xlew_ht/2+L_acht_LErc}
+        else if(checkbox2.checked){
+          var Hwing=-W_fus/3
+          var xvvt=xlew_vt
+          var Hht=Hvt*0.1
+          var xhht=xlew_ht+L_acht_LErc
+        }
+        var x_wing=xlew-2*xlew_wing
+        //Wing
+        if(M_cruise<=0.35){
+          var ywing = ([0, b/2, b/2, 0,-b/2,-b/2,0])
+          var xwing = ([-Cr/4+xlew_wing+x_wing,xlew_wing-Ct/4+x_wing,xlew_wing+3*Ct/4+x_wing, xlew_wing+3*Cr/4+x_wing, xlew_wing+3*Ct/4+x_wing ,xlew_wing -Ct/4+x_wing,xlew_wing-Cr/4+x_wing])
+          var zwing= ([Hwing,Hwing,Hwing,Hwing,Hwing,Hwing,Hwing])}
+        else if(M_cruise>=0.8){
+          var ywing = ([0, b/2, b/2, 0,-b/2,-b/2,0])
+          var xwing = ([-Cr/4+xlew_wing+x_wing,xlew_wing +b/2*Math.tan(sweep_c4*Math.PI/180)-Ct/4+x_wing,xlew_wing +b/2*Math.tan(sweep_c4*Math.PI/180)+3*Ct/4+x_wing, xlew_wing+3*Cr/4+x_wing, xlew_wing+b/2*Math.tan(sweep_c4*Math.PI/180)+3*Ct/4 +x_wing,xlew_wing +b/2*Math.tan(sweep_c4*Math.PI/180)-Ct/4+x_wing,xlew_wing-Cr/4+x_wing])
+          var zwing= ([Hwing,Hwing,Hwing,Hwing,Hwing,Hwing,Hwing])}
+        else{
+          var ywing = ([0, b/2*0.35, b/2, b/2,b/2*0.35,0,-b/2*0.35,-b/2,-b/2,-b/2*0.35,0])
+          var xwing = ([-Cr/4+xlew_wing+x_wing,xlew_wing-Cr/4+x_wing,xlew_wing +Cr/4-Ct/2+x_wing, xlew_wing+Cr/4+Ct/2+x_wing, xlew_wing+3*Cr/4 +x_wing,xlew_wing +3*Cr/4+x_wing,xlew_wing+3*Cr/4+x_wing, xlew_wing+Cr/4+Ct/2+x_wing, xlew_wing+Cr/4-Ct/2+x_wing, xlew_wing-Cr/4+x_wing,xlew_wing-Cr/4+x_wing])
+          var zwing= ([Hwing,Hwing,Hwing,Hwing,Hwing,Hwing,Hwing,Hwing,Hwing,Hwing,Hwing])
+        }
+        //Horizintal Tail
+        var yht = ([0, bht/2, bht/2, 0,-bht/2,-bht/2,0])
+        var xht = ([-Crht/4+xlew_ht+xhht,xhht+ xlew_ht+bht/2*Math.tan(Sweep_LEht*Math.PI/180)-Ctht/4,xhht+xlew_ht +bht/2*Math.tan(Sweep_LEht*Math.PI/180)+3*Ctht/4,xhht+ xlew_ht+3*Crht/4,xhht+xlew_ht +bht/2*Math.tan(Sweep_LEht*Math.PI/180)+3*Ctht/4 ,xhht+xlew_ht +bht/2*Math.tan(Sweep_LEht*Math.PI/180)-Ctht/4,xhht+xlew_ht-Crht/4])
+        var zht=([Hht,Hht,Hht,Hht,Hht,Hht,Hht])
+        //Vertical Tail
+        var xvt = ([0+xlew_vt+xvvt,xvvt+xlew_vt+Hvt*Math.tan(Sweep_LEvt*Math.PI/180),xvvt+xlew_vt+Hvt*Math.tan(Sweep_LEvt*Math.PI/180)+Ctvt,xvvt+xlew_vt+Ctvt,xvvt+xlew_vt+0])
+        var yvt = ([0,0,0,0,0])
+        var zvt = ([0,Hvt,Hvt,0,0])
+        //Mid fus
+        const theta = Array.from({ length: 201 }, (_, i) => (2 * Math.PI * i) / 200);
+        const radius = W_fus / 2;
+        const xfus = Array.from({ length: L_fus-3.5}, (_, i) =>  (L_fus/20) * i);
+        const thetas = [];
+        const xs = [];
+        for (let i = 0; i < xfus.length; i++) {
+          const currentThetaRow = [];
+          const currentXRow = [];
+          for (let j = 0; j < theta.length; j++) {
+            currentThetaRow.push(theta[j]);
+            currentXRow.push(xfus[i]);
+          }
+          thetas.push(currentThetaRow);
+          xs.push(currentXRow);
+        }
+        const yfus = [];
+        const zfus = [];
+        for (let i = 0; i < thetas.length; i++) {
+          const currentYRow = [];
+          const currentZRow = [];
+          for (let j = 0; j < thetas[i].length; j++) {
+            currentYRow.push(radius * Math.cos(thetas[i][j]));
+            currentZRow.push(radius * Math.sin(thetas[i][j]));
+          }
+          yfus.push(currentYRow);
+          zfus.push(currentZRow);
+        }
+        // sphere
+        //const thetasph = [...Array(360).keys()].map((x) => (x * Math.PI) / 180);
+        //const phisph = [...Array(360).keys()].map((x) => (x * Math.PI) / 180);
+        //const surfaceData = phisph.map((p) => thetasph.map((t) => [Math.sin(p) * Math.cos(t), Math.sin(p) * Math.sin(t), Math.cos(p)]));
+        //const trace={x: surfaceData.map(row => row.map(coord => coord[0])),y: surfaceData.map(row => row.map(coord => coord[1])),z: surfaceData.map(row => row.map(coord => coord[2])),type: 'surface',colorscale: 'YlGnBu',opacity: 0.5}
+
+        //Plot
+        const dataaircraft=[{type: "scatter3d",x:xwing,y:ywing,z:zwing,name:"Wing",mode:"lines"},{type: "scatter3d",x:xht,y:yht,z:zht,name:"Horizontal Tail",mode:"lines"},{type:"scatter3d",x:xvt ,y:yvt,z:zvt,name:"Vertical Tail",mode:"lines"},{type:'surface',x: xs,y: yfus,z: zfus,colorscale: 'YlGnBu',opacity: 0.5}]
+        const layoutaircraft = {xaxis: {title: "x"},yaxis: {title: "y"},zaxis:{titile:"z"},title: "Aircraft",legend: {x: 1,xanchor: 'right',y: 1}, scene:{xaxis: { range: [-2,L_fus+2] },yaxis: { range: [-L_fus/2-5,L_fus/2+5] },zaxis: { range: [-L_fus/2,L_fus/2] }},aspectratio: { x: 1, y: 1, z: 1 }};
+        Plotly.newPlot("aircraftplot", dataaircraft, layoutaircraft);
+        
         //Rate of Climb
         //let exprc = "-H_Cruise*1000/RClimb*x_rc+H_Cruise*1000";
         //const xrc = [];
