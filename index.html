@@ -1646,13 +1646,13 @@
         if (checkbox1.checked){
           var Hwing=W_fus*2/6
           var Hht=Hvt*0.75
-          var xvvt=xlew_vt/2
-          var xhht=xlew_ht/2+L_acht_LErc}
+          var xvvt=Lac_Vtail-L_acvt_LErc
+          var xhht=Lac_Htail-L_acht_LErc}
         else if(checkbox2.checked){
           var Hwing=-W_fus/3
-          var xvvt=xlew_vt
-          var Hht=Hvt*0.1
-          var xhht=xlew_ht+L_acht_LErc
+          var xvvt=Lac_Vtail-L_acvt_LErc
+          var Hht=Hvt*0.75
+          var xhht=Lac_Htail-L_acht_LErc
         }
         var x_wing=xlew-2*xlew_wing
         //Wing
@@ -1671,10 +1671,11 @@
         }
         //Horizintal Tail
         var yht = ([0, bht/2, bht/2, 0,-bht/2,-bht/2,0])
-        var xht = ([-Crht/4+xlew_ht+xhht,xhht+ xlew_ht+bht/2*Math.tan(Sweep_LEht*Math.PI/180)-Ctht/4,xhht+xlew_ht +bht/2*Math.tan(Sweep_LEht*Math.PI/180)+3*Ctht/4,xhht+ xlew_ht+3*Crht/4,xhht+xlew_ht +bht/2*Math.tan(Sweep_LEht*Math.PI/180)+3*Ctht/4 ,xhht+xlew_ht +bht/2*Math.tan(Sweep_LEht*Math.PI/180)-Ctht/4,xhht+xlew_ht-Crht/4])
+        var xht = ([-Crht/4+xhht,xhht+bht/2*Math.tan(Sweep_LEht*Math.PI/180)-Ctht/4,xhht+bht/2*Math.tan(Sweep_LEht*Math.PI/180)+3*Ctht/4,xhht+3*Crht/4,xhht +bht/2*Math.tan(Sweep_LEht*Math.PI/180)+3*Ctht/4 ,xhht+bht/2*Math.tan(Sweep_LEht*Math.PI/180)-Ctht/4,xhht-Crht/4])
         var zht=([Hht,Hht,Hht,Hht,Hht,Hht,Hht])
+
         //Vertical Tail
-        var xvt = ([0+xlew_vt+xvvt,xvvt+xlew_vt+Hvt*Math.tan(Sweep_LEvt*Math.PI/180),xvvt+xlew_vt+Hvt*Math.tan(Sweep_LEvt*Math.PI/180)+Ctvt,xvvt+xlew_vt+Ctvt,xvvt+xlew_vt+0])
+        var xvt = ([0+xvvt,xvvt+Hvt*Math.tan(Sweep_LEvt*Math.PI/180),xvvt+Hvt*Math.tan(Sweep_LEvt*Math.PI/180)+Ctvt,xvvt+Ctvt,xvvt+0])
         var yvt = ([0,0,0,0,0])
         var zvt = ([0,Hvt,Hvt,0,0])
         //Mid fus
