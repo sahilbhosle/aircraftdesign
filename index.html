@@ -3,7 +3,6 @@
   <head>
     <title>Tool For Aircraft Design</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
   </head>
   <body>
     <h1>Aircraft Design Tool</h1>
@@ -1197,20 +1196,21 @@
           function f(x, S, Cr, Ct, b) {
             return 2 / S * (Cr - (Cr - Ct) / (b / 2) * x) ** 2;
           }
-            let a = 0; // lower limit of integration
+            let a1 = 0; // lower limit of integration
             let upperLimit = b / 2; // upper limit of integration
             let numSteps = 1000; // number of steps for numerical integration
-            let stepSize = (upperLimit - a) / numSteps; // calculate step size
+            let stepSize = (upperLimit - a1) / numSteps; // calculate step size
             let integral0 = 0; // initialize integral variable
 
           for (let i = 0; i < numSteps; i++) {
-          let x = a + (i + 0.5) * stepSize; // calculate x at the midpoint of each step
-          integral0 += f(x, S, Cr, Ct, b) * stepSize; // add the area of the rectangle to the integral
+          let x1 = a1 + (i + 0.5) * stepSize; // calculate x at the midpoint of each step
+          integral0 += f(x1, S, Cr, Ct, b) * stepSize; // add the area of the rectangle to the integral
           }
-          let Cw = integral0;
+          let Cw0 = integral0;
+          var Cw=Cw0
           var ymac=(Cr-Cw)*b/2/(Cr-Ct);
           var sweep=Math.atan(Math.tan(sweep_c4etw*Math.PI/180)+(1/TR-1)/AR/(1/TR+1))*180/Math.PI
-          var x=Math.tan(sweep*np.pi/180)*y
+          var x=Math.tan(sweep*Math.PI/180)*y
           var L_ac_LErc=x+0.25*Cw
           var sweep_c2=Math.atan(Math.tan(sweep_c4etw*Math.PI/180)-4*0.25*(1-TR)/AR/(1+TR))
           var beta=Math.sqrt(1-(V_Cruise/a_cruise)**2)
